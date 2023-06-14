@@ -1,7 +1,8 @@
-"""app URL Configuration
+"""
+URL configuration for app project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,8 +16,32 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls'))
+
+    # My path
+    path('', views.home, name="home"),
+    path('khmer/', views.khmer, name="khmer"),
+    path('python/', views.python, name="python"),
+    path('java/', views.java, name="java"),
+    path('c/', views.c, name="c"),
+    path('cpp/', views.cpp, name="cpp"),
+    path('csharp/', views.csharp, name="csharp"),
+    path('html/', views.html, name="html"),
+    path('css/', views.css, name="css"),
+    path('javascript/', views.javascript, name="javascript"),
+    path('login/', views.login, name="login"),
+
+    # Submenu of sidebar called URL
+    path('khmer/lesson', views.khmerMenu, name="khmerMenu"),
+    path('python/lesson', views.pythonMenu, name="pythonMenu"),
+    path('java/lesson', views.javaMenu, name="javaMenu"),
+    path('c/lesson', views.cMenu, name="cMenu"),
+    path('cpp/lesson', views.cppMenu, name="cppMenu"),
+    path('csharp/lesson', views.csharpMenu, name="csharpMenu"),
+    path('html/lesson', views.htmlMenu, name="htmlMenu"),
+    path('css/lesson', views.cssMenu, name="cssMenu"),
+    path('javascript/lesson', views.javascriptMenu, name="javascriptMenu"),
 ]

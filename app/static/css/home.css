@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-container {
+    background-color: white;
+    padding: 3px;
+    font-weight: bold;
+    margin-bottom: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.main-home {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

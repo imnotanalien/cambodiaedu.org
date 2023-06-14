@@ -44,4 +44,14 @@ urlpatterns = [
     path('html/lesson', views.htmlMenu, name="htmlMenu"),
     path('css/lesson', views.cssMenu, name="cssMenu"),
     path('javascript/lesson', views.javascriptMenu, name="javascriptMenu"),
+
+    # Blog posts
+    path('blog', views.blogPost, name="Blog posts"),
+
+    # Social Media
+    path('social', views.socialMedia, name="Social media"),
+
+    # Videos
+    path('videos', views.videosHome, name="Video home"),
+    path('video-details', views.videoDetails, name="Video detail page"),
 ]

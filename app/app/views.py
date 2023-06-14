@@ -62,3 +62,18 @@ def cssMenu(request):
 
 def javascriptMenu(request):
     return render(request, 'src/menu/javascriptMenu.html')
+
+# Blog posts
+def blogPost(request):
+    return render(request, 'blog/blog.html')
+
+# Social Media
+def socialMedia(request):
+    return render(request, 'social/social.html')
+
+# Videos
+def videosHome(request):
+    return render(request, 'videos/videos.html')
+
+def videoDetails(request):
+    return render(request, 'videos/video-details.html')

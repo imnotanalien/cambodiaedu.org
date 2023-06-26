@@ -67,13 +67,22 @@ def javascriptMenu(request):
 def blogPost(request):
     return render(request, 'blog/blog.html')
 
-# Social Media
-def socialMedia(request):
-    return render(request, 'social/social.html')
-
 # Videos
 def videosHome(request):
     return render(request, 'videos/videos.html')
 
 def videoDetails(request):
     return render(request, 'videos/video-details.html')
+
+# More
+def moreAbout(request):
+    return render(request, 'more/about.html')
+
+def moreContact(request):
+    return render(request, 'more/contact.html')
+
+def moreDonate(request):
+    return render(request, 'more/donate.html')
+
+def moreSocial(request):
+    return render(request, 'more/social.html')

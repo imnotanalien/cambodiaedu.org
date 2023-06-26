@@ -1,0 +1,36 @@
+@media (min-width: 1048px) {
+    .sidebar {
+        flex-shrink: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        /* height: calc(100vh - var(--header-height)); */
+        top: 0;
+        left: 0;
+        position: sticky;
+        position: -webkit-sticky;
+        width: 250px;
+        height: 100vh;
+        background: #fff;
+        z-index: 10;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+}
+
+@media (max-width: 1048px) {
+    .sidebar {
+        flex-shrink: 0;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: sticky;
+        position: -webkit-sticky;
+        width: 60px;
+        height: 100vh;
+        background: #fff;
+        z-index: 10;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+}

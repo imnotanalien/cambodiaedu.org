@@ -48,10 +48,13 @@ urlpatterns = [
     # Blog posts
     path('blog', views.blogPost, name="Blog posts"),
 
-    # Social Media
-    path('social', views.socialMedia, name="Social media"),
-
     # Videos
     path('videos', views.videosHome, name="Video home"),
     path('video-details', views.videoDetails, name="Video detail page"),
+
+    # More
+    path('about', views.moreAbout, name="More About"),
+    path('contact', views.moreContact, name="More Contact"),
+    path('donate', views.moreDonate, name="More Donate"),
+    path('social', views.moreSocial, name="More Social"),
 ]

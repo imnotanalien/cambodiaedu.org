@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/more/about.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/more/contact.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/more/donate.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/more/request_budget.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/more/social.css' %}">
     {% block extra_style %}{% endblock extra_style %}
     </head>
@@ -23,44 +24,52 @@
     {% block body %}
     <body>
 
-      {% comment %} Load header, footer and sidebar from includes {% endcomment %}
-        <div id="main-wrapper" style="display: flex; position: relative;">
-            <!-- Sidebar -->
-            <div class="sidebar">
+      {% comment %} Load header, footer and aside from includes {% endcomment %}
+        <div id="main-container">
+            <!-- Aside -->
+            <div class="aside">
                 <!-- Back home -->
-                <div class="back-home" style="cursor: pointer;">
-                    <a href="/" style="text-decoration: none;">
+                <div class="back-home">
+                    <a href="/">
                         <i class="fa-solid fa-less-than"></i>
-                        <span style="font-size: 18px;">Back to home</span>
+                        <span>ត្រឡប់ទៅទំព័រដើម</span>
                     </a>
                 </div>
-                
-                <!-- Menu -->
-                <center style="height: 100%; display: flex; align-items: center">
-                    <ul class="nav-items" style="list-style-type: none;">
+
+                <div class="nav-toggler">
+                    <span></span>
+                </div>
+
+                <!-- Aside menu -->
+                <center>
+                    <div class="logo">
+                        <a href="/about"><span>អំពី​ពួក​យើង</span></a>
+                    </div>
+                    <ul class="nav-items">
                         <li class="nav-links">
-                            <i class="fa-solid fa-circle-info"></i>
-                            <a href="/about">About</a>
+                            <a href="/about"><i class="fa-solid fa-circle-info"></i>អំពី​ពួក​យើង</a>
                         </li>
                         <li class="nav-links">
-                            <i class="fa-solid fa-address-book"></i>
-                            <a href="/contact">Contact</a>
+                            <a href="/contact"><i class="fa-solid fa-address-book"></i>ទំនាក់ទំនង</a>
                         </li>
                         <li class="nav-links">
-                            <i class="fa-solid fa-hand-holding-medical"></i>
-                            <a href="/donate">Donate</a>
+                            <a href="/donate"><i class="fa-solid fa-hand-holding-medical"></i>បរិច្ចាគថវិកា</a>
                         </li>
                         <li class="nav-links">
-                            <i class="fa-solid fa-share-from-square"></i>
-                            <a href="/social">Social</a>
+                            <a href="/social"><i class="fa-solid fa-hand-holding-dollar"></i>ស្នើសុំថវិកា</a>
+                        </li>
+                        <li class="nav-links">
+                            <a href="/social"><i class="fa-solid fa-share-from-square"></i>ប​ណ្តា​ញ​សង្គម</a>
                         </li>
                     </ul>
                 </center>
             </div>
 
             <!-- Contents show here -->
-            <div class="page-wrapper" style="border: 1px solid red; width: 100%;">
-                {% block content %}{% endblock content %}
+            <div class="main-content">
+                <section>
+                    {% block content %}{% endblock content %}
+                </section>
             </div>
         </div>
 

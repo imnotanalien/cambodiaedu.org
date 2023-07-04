@@ -27,17 +27,18 @@
       {% comment %} Load header, footer and aside from includes {% endcomment %}
         <div id="main-container">
             <!-- Aside -->
-            <div class="aside">
+            <div class="aside" id="mySidenav">    
                 <!-- Back home -->
                 <div class="back-home">
                     <a href="/">
                         <i class="fa-solid fa-less-than"></i>
                         <span>ត្រឡប់ទៅទំព័រដើម</span>
                     </a>
+                    <a style="font-size: 18px;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
                 </div>
 
-                <div class="nav-toggler">
-                    <span></span>
+                <div class="nav-toggler" id="hideOnClick">
+                    <span style="font-size:30px;cursor:pointer" onclick="openNav()"></span>
                 </div>
 
                 <!-- Aside menu -->
@@ -56,7 +57,7 @@
                             <a href="/donate"><i class="fa-solid fa-hand-holding-medical"></i>បរិច្ចាគថវិកា</a>
                         </li>
                         <li class="nav-links">
-                            <a href="/social"><i class="fa-solid fa-hand-holding-dollar"></i>ស្នើសុំថវិកា</a>
+                            <a href="/request_budget"><i class="fa-solid fa-hand-holding-dollar"></i>ស្នើសុំថវិកា</a>
                         </li>
                         <li class="nav-links">
                             <a href="/social"><i class="fa-solid fa-share-from-square"></i>ប​ណ្តា​ញ​សង្គម</a>
@@ -67,7 +68,7 @@
 
             <!-- Contents show here -->
             <div class="main-content">
-                <section>
+                <section id="main">
                     {% block content %}{% endblock content %}
                 </section>
             </div>
@@ -80,6 +81,22 @@
             <script src="{% static "js/more/social.js" %}"></script>
             <script src="{% static "js/more/social_snowfall.js" %}"></script>
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6X5HTYX4Z"></script>
+
+            <script>
+                function openNav() {
+                  document.getElementById("mySidenav").style.width = "250px";
+                  document.getElementById("mySidenav").style.left = "0";
+                  document.getElementById("hideOnClick").style.display = "none";
+                  // document.getElementById("main").style.marginLeft = "250px";
+                }
+                
+                function closeNav() {
+                  document.getElementById("mySidenav").style.width = "60px";
+                  document.getElementById("mySidenav").style.left = "-250px";
+                  document.getElementById("hideOnClick").style.display = "flex";
+                  // document.getElementById("main").style.marginLeft= "0";
+                }
+            </script>
         {% block extra_script %}{% endblock extra_script %}
         {% endblock script %}
 

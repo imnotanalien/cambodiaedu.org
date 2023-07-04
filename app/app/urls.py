@@ -56,5 +56,6 @@ urlpatterns = [
     path('about', views.moreAbout, name="More About"),
     path('contact', views.moreContact, name="More Contact"),
     path('donate', views.moreDonate, name="More Donate"),
+    path('request_budget', views.moreRequest_Budget, name="Request budget"),
     path('social', views.moreSocial, name="More Social"),
 ]

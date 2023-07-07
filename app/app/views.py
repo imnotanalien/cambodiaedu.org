@@ -64,8 +64,14 @@ def javascriptMenu(request):
     return render(request, 'src/menu/javascriptMenu.html')
 
 # Blog posts
-def blogPost(request):
+def blog(request):
     return render(request, 'blog/blog.html')
+
+def blogPost(request):
+    return render(request, 'blog/post.html')
+
+def blogAuthor(request):
+    return render(request, 'blog/author.html')
 
 # Videos
 def videosHome(request):

@@ -16,7 +16,7 @@ $ python manage.py migrate
 ```
 $ git remote -v
 $ git remote remove origin
-$ git remote add origin https://github.com/sokdenofficial/cambodiaedu.org.git
+$ git remote add origin https://github.com/thisisdensok/cambodiaedu.org.git
 
 - Clone from server
 $ git clone git@github.com:thisisdensok/cambodiaedu.org.git
@@ -30,3 +30,8 @@ $ https://github.com/thisisdensok/cambodiaedu.org.git
 $ git push --set-upstream origin main
 ```
 
+- Commit backdate in GitHub.
+```
+$ git commit --amend
+$ git add . && git commit --date="YYYY-MM-DD HH:MM:SS" -am "Update" && git push --force-with-lease
+```

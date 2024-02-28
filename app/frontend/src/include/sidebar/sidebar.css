@@ -1,0 +1,14 @@
+.sidebar-page {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    z-index: 1;
+}
+
+.sidebar-page ul li a {
+    color: #000;
+}

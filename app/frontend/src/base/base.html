@@ -1,0 +1,51 @@
+{% load i18n %}
+{% load static %}
+{% load sekizai_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static "assets/images/favicon.ico" %}">
+    <link rel="apple-touch-icon" href="{% static "assets/images/apple-touch-icon.png" %}">
+    <title>{% block title %}ទំព័រដើម | CambodiaEdu.org{% endblock %}</title>
+
+    {% comment %} Google Fonts | Battambang {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static "src/base/base.css" %}">
+    
+    {% block style %}{% endblock style %}
+    {% block html_head_tag %}{% endblock html_head_tag %}
+
+    {% render_block "css" %}
+
+    {% comment %} Improve Google Site Name. {% endcomment %}
+    <script type="application/ld+json">
+        {
+            "@context" : "https://schema.org",
+            "@type" : "WebSite",
+            "name" : "CambodiaEdu.org",
+            "alternateName" : "CamboEdu",
+            "url" : "https://www.cambodiaedu.org/",
+        }
+    </script>
+</head>
+<body>
+    <script src="{% static "src/base/base.js" %}"></script>
+
+    {% comment %} Block content. {% endcomment %}
+    <main class="main" id="main">
+        {% block content %}{% endblock content %}
+    </main>
+
+    {% block script %}{% endblock script %}
+
+    {% render_block "js" %}
+</body>
+</html>

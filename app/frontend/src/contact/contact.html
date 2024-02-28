@@ -1,0 +1,20 @@
+{% extends "src/base/base.html" %}
+{% load static %}
+
+{% block title %}Contact | CambodiaEdu.org{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "src/contact/contact.css" %}">
+{% endblock style %}
+
+{% block content %}
+{% include "src/include/sidebar-about/sidebar-about.html" %}
+
+<div class="contact-main-content">
+    <h1>ទំនាក់ទំនង</h1>
+</div>
+
+{% endblock %}
+{% block script %}
+    <script src="{% static "src/contact/contact.js" %}"></script>
+{% endblock script %}

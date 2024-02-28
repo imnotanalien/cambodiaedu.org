@@ -1,0 +1,24 @@
+{% extends "src/base/base.html" %}
+{% load static %}
+
+{% block title %}អត្ថបទ | CambodiaEdu.org{% endblock title %}
+
+
+{% block content %}
+{% include "src/include/header/header.html" %}
+
+{% comment %} Begin Site Title {% endcomment %}
+<div class="container">
+	<div class="mainheading">
+		<h1 class="sitetitle">CambodiaEdu's Blog</h1>
+		<p class="lead">ភាសាខ្មែរ</p>
+	</div>
+</div>
+
+{% endblock content %}
+{% block script %}
+	<script src="{% static "src/blog/jquery.min.js" %}"></script>
+	<script src="{% static "src/blog/bootstrap.min.js" %}"></script>
+	<script src="{% static "src/blog/ie10-viewport-bug-workaround.js" %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+{% endblock script %}

@@ -1,0 +1,29 @@
+{% extends "src/base/base.html" %}
+{% load static %}
+
+{% block title %}{{ my_data.category }} | CambodiaEdu.org{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static "src/lesson/lesson.css" %}">
+{% endblock style %}
+
+
+{% block content %}
+{% include "src/include/header/header.html" %}
+{% include "src/include/sidebar-lesson/sidebar-lesson.html" %}
+
+    <div class="lesson-container">
+        <div class="lesson-body">
+            <h1>English version: {{ my_data.title_english }}</h1>
+            <h1>Khmer version: {{ my_data.title_khmer }}</h1>
+            <h1>Post at: {{ my_data.created_at }}</h1>
+        </div>
+    </div>
+
+    <div class="footer-include">
+        {% include "src/include/footer/footer.html" %}
+    </div>
+{% endblock content %}
+{% block script %}
+    <script src="{% static "src/lesson/lesson.js" %}"></script>
+{% endblock script %}

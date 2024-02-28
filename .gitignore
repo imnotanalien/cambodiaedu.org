@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 # sokden editor
-staticfiles
+staticfiles/
+test/

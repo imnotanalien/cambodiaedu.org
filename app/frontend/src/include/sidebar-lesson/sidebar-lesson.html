@@ -1,0 +1,34 @@
+{% load i18n %}
+{% load static %}
+{% load sekizai_tags %}
+
+{% addtoblock "css" %}
+    <link rel="stylesheet" href="{% static "src/include/sidebar-lesson/sidebar-lesson.css" %}">
+{% endaddtoblock %}
+
+<div class="sidebar-lesson-container">
+    <div class="sidebar-lesson">
+        <div class="link">
+            <a href="#unit1">Python មេរៀនទី១</a>
+        </div>
+        <div class="link">
+            <a href="#unit2">Python មេរៀនទី២</a>
+        </div>
+        <div class="link">
+            <a href="#unit3">Python មេរៀនទី៣</a>
+        </div>
+        <div class="link">
+            <a href="#unit4">Python មេរៀនទី៤</a>
+        </div>
+        <div class="link">
+            <a href="#unit5">Python មេរៀនទី៥</a>
+        </div>
+        <div class="link">
+            <a href="#unit6">Python មេរៀនទី៦</a>
+        </div>
+    </div>
+</div>
+
+{% addtoblock "js" %}
+    <link rel="stylesheet" href="{% static "src/include/sidebar-lesson/sidebar-lesson.js" %}">
+{% endaddtoblock %}

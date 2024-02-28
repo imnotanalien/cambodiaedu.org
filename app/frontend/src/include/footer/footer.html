@@ -1,0 +1,17 @@
+{% load static %}
+{% load sekizai_tags %}
+
+{% addtoblock "css" %}
+    <link rel="stylesheet" href="{% static "src/include/footer/footer.css" %}">
+{% endaddtoblock %}
+
+
+<footer class="footer-container" id="footer">
+    <span>
+        &copy; 2024 រក្សាសិទ្ធិដោយ៖ <a href="{% url "home" %}">CambodiaEdu.org</a>
+    </span>
+</footer>
+
+{% addtoblock "js" %}
+    <script src="{% static "src/include/footer/footer.js" %}"></script>
+{% endaddtoblock %}

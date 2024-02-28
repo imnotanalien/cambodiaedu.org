@@ -1,0 +1,21 @@
+:root {
+    --bs-bg-opacity: 1;
+    --bs-secondary-rgb: #6c757d;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #171C24;
+    bottom: 0;
+    height: 100px;
+    background-color: rgb(87, 87, 87);
+    padding: 0;
+}
+
+.footer-container span,
+.footer-container a {
+    color: #fff;
+    text-decoration: none;
+}

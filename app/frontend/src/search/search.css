@@ -1,0 +1,17 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 70px);
+}
+
+.search-body {
+    background-color: red;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+}
+
+.search-message {
+    text-align: center;
+}

@@ -1,0 +1,36 @@
+{% extends "src/base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static "src/home/home.css" %}">
+{% endblock style %}
+
+
+{% block content %}
+{% include "src/include/header/header.html" %}
+
+    <div class="home-container">
+        <h1>{% trans "សួរស្តី" %}</h1>
+
+        {% get_current_language as CURRENT_LANGUAGE %}
+        {% get_available_languages as AVAILABLE_LANGUAGES %}
+        {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+
+        {% for data in my_data %}
+            <div class="card p-4">
+                <h3>
+                    {{ data.title }}
+                    <em style="font-size: small">{{ data.created_at }}</em>
+                </h3>
+                <p>{{ data.body | safe }}</p>
+            </div>
+        <hr>
+
+        {% empty %}
+            <p>Database is empty</p>
+        {% endfor %}
+    </div>
+
+{% include "src/include/footer/footer.html" %}
+{% endblock content %}

@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Battambang';
+    font-size: 18px;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable both-edges;
+    overflow-y: scroll;
+}

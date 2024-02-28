@@ -1,97 +1,127 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.core.exceptions import ObjectDoesNotExist
+from django.http import HttpRequest, HttpResponse, HttpResponse as HttpResponse
+from django.template import loader
 
-# Create your views here.
-def home(request):
-    return render(request, 'src/home.html')
+from urllib.parse import urlsplit
+from core.models import (
+    Post,
+    BlogPost,
+    BlogPostCategory,
+)
 
-def khmer(request):
-    return render(request, 'src/khmer.html')
+from django.db.models import Q
 
-def python(request):
-    return render(request, 'src/python.html')
 
-def java(request):
-    return render(request, 'src/java.html')
+def menu():
+    site_categories = BlogPostCategory.objects.all()
+    return site_categories
 
-def c(request):
-    return render(request, 'src/c.html')
+def home(request, **kwargs):
+    template = loader.get_template("src/home/home.html")
+    post = BlogPost.objects.all()
 
-def cpp(request):
-    return render(request, 'src/cpp.html')
+    # Get hostname and protocol.
+    url = request.build_absolute_uri()
+    protocol = urlsplit(url)[0]
+    host = request.get_host()
 
-def csharp(request):
-    return render(request, 'src/csharp.html')
+    context = {
+        "categories": menu(),
+        "my_data": post,
+    }
+    return HttpResponse(template.render(context, request))
 
-def html(request):
-    return render(request, 'src/html.html')
+
+def lesson(request, category_url=None):
+    template = loader.get_template("src/lesson/lesson.html")
+    page_not_found = loader.get_template("src/404-error/404-error.html")
+
+    try:
+        data = BlogPost.objects.get(category__categoryUrl=category_url)
+    except ObjectDoesNotExist:
+        return HttpResponse(page_not_found.render({}, request))
+
+    context = {
+        "my_data": data,
+        "categories": menu(),
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def detail(request, slug_url):
+    mymember = BlogPost.objects.get(slug=slug_url)
+    template = loader.get_template("src/home/detail/detail.html")
     
-def css(request):
-    return render(request, 'src/css.html')
+    context = {
+        "slug": mymember,
+    }
+    return HttpResponse(template.render(context, request))
 
-def javascript(request):
-    return render(request, 'src/javascript.html')
+def search(request):
+    template = loader.get_template("src/search/search.html")
+    post = BlogPost.objects.all()
+    q_input = request.GET.get('q')
+
+    if q_input is not None and q_input != "":
+        search_post = q_input
+    else:
+        return render(request, "src/search/search.html", context={"categories": menu()})
+    
+    posts = post.filter(Q(title__icontains=search_post) & Q(body__icontains=search_post))
+    if search_post != "" and search_post is not None:
+        if posts.exists():
+            posts
+        else:
+            posts = None
+    else:
+        posts = post.order_by("-created_at")
+    
+    context = {
+        "categories": menu(),
+        "queryset": posts,
+        "search_title": search_post,
+    }
+    return HttpResponse(template.render(context, request))
+
+def blog(request):
+    template = loader.get_template("src/blog/blog.html")
+    context = {
+        "categories": menu(),
+    }
+    return HttpResponse(template.render(context, request))
+
+def calculator(request):
+    template = loader.get_template("src/calculator/calculator.html")
+    context = {
+        "categories": menu(),
+    }
+    return HttpResponse(template.render(context, request))
 
 def login(request):
-    return render(request, 'src/login.html')
+    template = loader.get_template("src/login/login.html")
+    return HttpResponse(template.render({}, request))
 
-# Create submenu of sidebar
-def khmerMenu(request):
-    return render(request, 'src/menu/khmerMenu.html')
+def signup(request):
+    template = loader.get_template("src/signup/signup.html")
+    return HttpResponse(template.render({}, request))
 
-def pythonMenu(request):
-    return render(request, 'src/menu/pythonMenu.html')
+def about(request):
+    template = loader.get_template("src/about/about.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
 
-def javaMenu(request):
-    return render(request, 'src/menu/javaMenu.html')
+def follow(request):
+    template = loader.get_template("src/follow/follow.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
 
-def cMenu(request):
-    return render(request, 'src/menu/cMenu.html')
+def donate(request):
+    template = loader.get_template("src/donate/donate.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
 
-def cppMenu(request):
-    return render(request, 'src/menu/cppMenu.html')
-
-def csharpMenu(request):
-    return render(request, 'src/menu/csharpMenu.html')
-
-def htmlMenu(request):
-    return render(request, 'src/menu/htmlMenu.html')
-    
-def cssMenu(request):
-    return render(request, 'src/menu/cssMenu.html')
-
-def javascriptMenu(request):
-    return render(request, 'src/menu/javascriptMenu.html')
-
-# Blog posts
-def blog(request):
-    return render(request, 'blog/blog.html')
-
-def blogPost(request):
-    return render(request, 'blog/post.html')
-
-def blogAuthor(request):
-    return render(request, 'blog/author.html')
-
-# Videos
-def videosHome(request):
-    return render(request, 'videos/videos.html')
-
-def videoDetails(request):
-    return render(request, 'videos/video-details.html')
-
-# More
-def moreAbout(request):
-    return render(request, 'more/about.html')
-
-def moreContact(request):
-    return render(request, 'more/contact.html')
-
-def moreDonate(request):
-    return render(request, 'more/donate.html')
-
-def moreRequest_Budget(request):
-    return render(request, 'more/request_budget.html')
-
-def moreSocial(request):
-    return render(request, 'more/social.html')
+def contact(request):
+    template = loader.get_template("src/contact/contact.html")
+    context = {}
+    return HttpResponse(template.render(context, request))

@@ -1,5 +1,10 @@
-Django==5.0
-djangorestframework==3.14.0
+Django==5.0.1
 python-dotenv==1.0.0
 gunicorn==21.2.0
 psycopg2==2.9.9
+whitenoise==6.6.0
+django-ckeditor==6.7.0
+# Render CSS or JavaScript at the top or bottom.
+django-sekizai==4.1.0
+# Automatically reload page.
+django-browser-reload

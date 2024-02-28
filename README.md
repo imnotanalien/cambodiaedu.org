@@ -16,13 +16,13 @@ $ python manage.py migrate
 ```
 $ git remote -v
 $ git remote remove origin
-$ git remote add origin https://github.com/thisisdensok/cambodiaedu.org.git
+$ git remote add origin https://github.com/thisisdensok/cambodiaedu.git
 
 - Clone from server
-$ git clone git@github.com:thisisdensok/cambodiaedu.org.git
+$ git clone git@github.com:thisisdensok/cambodiaedu.git
 
 - Clone from local machine
-$ https://github.com/thisisdensok/cambodiaedu.org.git
+$ https://github.com/thisisdensok/cambodiaedu.git
 ```
 
 - To push the current branch and set the remote as upstream, use:

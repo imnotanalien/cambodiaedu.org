@@ -1,0 +1,35 @@
+{% load i18n %}
+{% load static %}
+{% load sekizai_tags %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+
+{% addtoblock "css" %}
+    <link rel="stylesheet" href="{% static "src/include/sidebar-calculator/sidebar-calculator.css" %}">
+{% endaddtoblock %}
+
+
+<aside class="sidebar-calculator">
+    <ul class="sidebar-calculator-ul">
+        <li class="sidebar-calculator-li">
+            <a href="{% url "calculator" %}" class="sidebar-calculator-links home">
+                <span id="svgSidebarHome"></span>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="sidebar-calculator-li">
+            <a href="{% url "about-calculator" %}" class="sidebar-calculator-links about">
+                <span id="svgSidebarAbout"></span>
+                <span>About</span>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+
+{% addtoblock "js" %}
+    <script src="{% static "src/include/sidebar-calculator/sidebar-calculator.js" %}"></script>
+{% endaddtoblock %}

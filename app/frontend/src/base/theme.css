@@ -1,0 +1,180 @@
+:root {
+    /* ^ this is what I have in the final code at codinginpublic.dev/projects/light-dark/ 
+    I missed the change from 96% lightness in the second box-shadow to 26% lightness when doing the video
+    */
+    --text-light: hsl(255, 36%, 17%);
+    --accent1-light: hsl(175, 100%, 31%);
+    --accent2-light: hsl(21, 84%, 56%);
+    --accent3-light: hsl(40, 89%, 65%);
+    --bkg1-light: hsl(0, 0%, 100%);
+    --bkg2-light: hsl(26, 37%, 96%);
+    --shadow-light: 20px 20px 50px hsl(255, 36%, 17%, .35),
+        -30px -30px 50px hsl(26, 37%, 96%, .15);
+
+
+    --text-dark: hsl(217, 54.2%, 88%);
+    --accent1-dark: hsl(175, 100%, 31%);
+    --accent2-dark: hsl(21, 84%, 56%);
+    --accent3-dark: hsl(40, 89%, 65%);
+    --bkg1-dark: hsl(218, 15.4%, 10.2%);
+    --bkg2-dark: hsl(218, 14.7%, 18.7%);
+
+    --shadow-dark: 20px 20px 50px hsl(255, 36%, 17%, .35),
+        -30px -30px 50px hsl(26, 37%, 26%, .15);
+
+    /* densok */
+    --navbar-bg-light: #fff;
+    --navbar-bg-dark: var(--bkg2-dark);
+
+    --bg-light: #f0f2f5;
+    --bg-dark: hsl(218, 14.7%, 18.7%);
+
+    --bg-card-light: #fff;
+    --bg-card-dark: hsl(218, 14.7%, 18.7%);
+
+    --svg-icon-light: #fff;
+    --svg-icon-dark: hsl(218, 14.7%, 18.7%);
+
+    --cookie-policy-light: #0000EE;
+    --cookie-policy-dark: #fe5b50;
+
+    --promote-btn-bg-light: #fff;
+    --promote-btn-bg-dark: var(--bg-dark);
+    --promote-btn-hover-light: rgb(249, 250, 251);
+    --promote-btn-hover-dark: #fe5b50;
+
+    --legal-border-light: 1px solid rgba(0, 0, 0, .2);
+    --legal-border-dark: var(--card-border-size);
+
+    --card-border-radius: 5px;
+    --card-border-size: 1px solid rgba(255, 255, 255, .2);
+    --card-border-size-2: 2px solid rgba(255, 255, 255, .3);
+
+    --border-light: 1px solid rgba(255, 255, 255, .5);;
+    --border-dark: 1px solid rgba(0, 0, 0, .5);
+
+    --hamburger-light: #fff;
+    --hamburger-dark: #2c3e50;
+
+    --text-shadow-hover-light: 0 0 0 #fff;
+    --text-shadow-hover-dark: 0 0 0 #333;
+
+    --box-shadow-light: rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px;
+    --box-shadow-dark: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    /* end */
+}
+
+/* In order to write codes below correctly is that we must put the same order as me now "code below". */
+@media(prefers-color-scheme: dark) {
+    :root {
+        --text: var(--text-dark);
+        --accent1: var(--accent1-dark);
+        --accent2: var(--accent2-dark);
+        --accent3: var(--accent3-dark);
+        --bkg1: var(--bkg1-dark);
+        --bkg2: var(--bkg2-dark);
+        --shadow: var(--shadow-dark);
+
+        /* densok */
+        --navbar-bg-both: var(--navbar-bg-dark);
+        --bg-both: var(--bg-dark);
+        --bg-card-both: var(--bg-card-dark);
+        --cookie-policy-both: var(--cookie-policy-light);
+        --promote-btn-both: var(--promote-btn-bg-dark);
+        --promote-btn-hover-both: var(--promote-btn-hover-dark);
+        --legal-border-both: var(--legal-border-dark);
+        
+        /* --svg-both-color: var(--svg-icon-dark); */
+        /* contrast color */
+        --svg-both-color: var(--svg-icon-light);
+        --hamburger-both: var(--hamburger-light);
+        --text-shadow-hover-both: var(--text-shadow-hover-light);
+        --border-both: var(--border-light);
+        --box-shadow-both: var(--box-shadow-light);
+        /* end */
+    }
+}
+
+@media(prefers-color-scheme: light) {
+    :root {        
+        --text: var(--text-light);
+        --accent1: var(--accent1-light);
+        --accent2: var(--accent2-light);
+        --accent3: var(--accent3-light);
+        --bkg1: var(--bkg1-light);
+        --bkg2: var(--bkg2-light);
+        --shadow: var(--shadow-light);
+
+        /* densok */
+        --navbar-bg-both: var(--navbar-bg-light);
+        --bg-both: var(--bg-light);
+        --bg-card-both: var(--bg-card-light);
+        --svg-both-color: var(--svg-icon-light);
+        --promote-btn-both: var(--promote-btn-bg-light);
+        --promote-btn-hover-both: var(--promote-btn-hover-light);
+        --legal-border-both: var(--legal-border-light);
+        
+        /* contrast color */
+        --svg-both-color: var(--svg-icon-dark);
+        --hamburger-both: var(--hamburger-dark);
+        --text-shadow-hover-both: var(--text-shadow-hover-dark);
+        --border-both: var(--border-dark);
+        --box-shadow-both: var(--box-shadow-dark);
+        /* end */
+    }
+}
+
+[color-scheme="dark"] {
+    --text: var(--text-dark);
+    --accent1: var(--accent1-dark);
+    --accent2: var(--accent2-dark);
+    --accent3: var(--accent3-dark);
+    --bkg1: var(--bkg1-dark);
+    --bkg2: var(--bkg2-dark);
+    --shadow: var(--shadow-dark);
+
+    /* densok */
+    --navbar-bg-both: var(--navbar-bg-dark);
+    --bg-both: var(--bg-dark);
+    --bg-card-both: var(--bg-card-dark);
+    --cookie-policy-both: var(--cookie-policy-dark);
+    --promote-btn-both: var(--promote-btn-bg-dark);
+    --promote-btn-hover-both: var(--promote-btn-hover-dark);
+    --legal-border-both: var(--legal-border-dark);
+    
+    /* contrast color */
+    --svg-both-color: var(--svg-icon-light);
+    --hamburger-both: var(--hamburger-light);
+    --text-shadow-hover-both: var(--text-shadow-hover-light);
+    --border-both: var(--border-light);
+    --box-shadow-both: var(--box-shadow-light);
+    /* end */
+}
+
+[color-scheme="light"] {
+    --text: var(--text-light);
+    --accent1: var(--accent1-light);
+    --accent2: var(--accent2-light);
+    --accent3: var(--accent3-light);
+    --bkg1: var(--bkg1-light);
+    --bkg2: var(--bkg2-light);
+    --shadow: var(--shadow-light);
+
+    /* densok */
+    --navbar-bg-both: var(--navbar-bg-light);
+    --bg-both: var(--bg-light);
+    --bg-card-both: var(--bg-card-light);
+    --cookie-policy-both: var(--cookie-policy-light);
+    --promote-btn-both: var(--promote-btn-bg-light);
+    --promote-btn-hover-both: var(--promote-btn-hover-light);
+    --legal-border-both: var(--legal-border-light);
+    
+    /* contrast color */
+    --svg-both-color: var(--svg-icon-dark);
+    --hamburger-both: var(--hamburger-dark);
+    --text-shadow-hover-both: var(--text-shadow-hover-dark);
+    --border-both: var(--border-dark);
+    --box-shadow-both: var(--box-shadow-dark);
+    /* end */
+}
+/* End, In order to write codes below correctly is that we must put the same order as me now "code below". */

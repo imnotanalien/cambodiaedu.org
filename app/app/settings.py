@@ -41,11 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    # 'django.contrib.staticfiles', # Replace the default to customizing "collectstatic_ignore.py".
     "django_browser_reload",
     'core',
     'ckeditor',
     'sekizai',
+    'app.ignore_collectstatic.MyStaticFilesConfig', # The collectstatic is replaced by this line.
 ]
 
 MIDDLEWARE = [

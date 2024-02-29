@@ -35,7 +35,15 @@ urlpatterns += i18n_patterns(
     path(_(""), views.home, name="home"),
 
     path(_("blog/"), views.blog, name="blog"),
+
+    # Calculator
     path(_("calculator/"), views.calculator, name="calculator"),
+    path(_("calculator/basic/"), views.basicCalculator, name="basic-calculator"),
+    path(_("calculator/geometry/"), views.geometryCalculator, name="geometry-calculator"),
+    path(_("calculator/graphing/"), views.graphingCalculator, name="graphing-calculator"),
+    path(_("calculator/probability/"), views.probabilityCalculator, name="probability-calculator"),
+    path(_("calculator/about/"), views.aboutCalculator, name="about-calculator"),
+    # End, Calculator
 
     path(_("login/"), views.login, name="login"),
     path(_("signup/"), views.signup, name="signup"),

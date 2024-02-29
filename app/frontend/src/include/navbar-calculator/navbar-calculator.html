@@ -1,0 +1,41 @@
+{% load i18n %}
+{% load static %}
+{% load sekizai_tags %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+
+{% addtoblock "css" %}
+    <link rel="stylesheet" href="{% static "src/include/navbar-calculator/navbar-calculator.css" %}">
+{% endaddtoblock %}
+
+<nav class="navbar-calculator">
+    <a href="{% url "calculator" %}" class="navbar-calculator-logo-a">
+        <img class="navbar-calculator-logo" src="{% static "assets/images/icon.png" %}" alt="">
+        <span>Cambo/Calculator</span>
+    </a>
+    <ul class="navbar-calculator-ul">
+        <li>
+            <a class="navbar-calculator-links" href="{% url "basic-calculator" %}">Basic</a>
+        </li>
+        <li>
+            <a class="navbar-calculator-links" href="{% url "graphing-calculator" %}">Graphing</a>
+        </li>
+        <li>
+            <a class="navbar-calculator-links" href="{% url "geometry-calculator" %}">Geometry</a>
+        </li>
+        <li>
+            <a class="navbar-calculator-links" href="{% url "probability-calculator" %}">Probability</a>
+        </li>
+    </ul>
+
+    <div style="position: relative; display: flex; align-items: center; right: 1.2rem; margin-left: auto;">
+        {% include "src/include/theme-btn/theme-btn.html" %}
+    </div>
+</nav>
+
+{% addtoblock "js" %}
+    <script src="{% static "src/include/navbar-calculator/navbar-calculator.js" %}"></script>
+{% endaddtoblock %}

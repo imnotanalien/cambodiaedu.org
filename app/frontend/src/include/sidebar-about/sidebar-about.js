@@ -15,7 +15,6 @@ function closeNav() {
 // const navLinks = document.querySelectorAll(".nav-links");
 const activePage = window.location.pathname;
 const navLinks = document.querySelectorAll(".links");
-const textItems = document.querySelector(".links span");
 
 navLinks.forEach(link => {
     if (link.href.includes(`${activePage}`)) {

@@ -1,0 +1,23 @@
+.theme-btn {
+    background: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+    padding: 0;
+}
+
+.theme-btn .svg-light-mode,
+.theme-btn .svg-dark-mode {
+    fill: var(--svg-both-color);
+}
+
+.theme-btn .svg-light-mode:hover,
+.theme-btn .svg-dark-mode:hover {
+    fill: #fe5b50;
+}

@@ -11,4 +11,9 @@ body {
     scroll-behavior: smooth;
     scrollbar-gutter: stable both-edges;
     overflow-y: scroll;
+    background-color: var(--bg-both);
+}
+
+h1, h2, h3, h4, h5, h6, span, a, p {
+    color: var(--text);
 }

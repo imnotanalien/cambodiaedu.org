@@ -91,12 +91,49 @@ def blog(request):
     }
     return HttpResponse(template.render(context, request))
 
+"""Calculator"""
 def calculator(request):
     template = loader.get_template("src/calculator/calculator.html")
     context = {
         "categories": menu(),
     }
     return HttpResponse(template.render(context, request))
+
+def basicCalculator(request):
+    template = loader.get_template("src/calculator/basic/basic.html")
+    context = {
+        "categories": menu(),
+    }
+    return HttpResponse(template.render(context, request))
+
+def geometryCalculator(request):
+    template = loader.get_template("src/calculator/geometry/geometry.html")
+    context = {
+        "categories": menu(),
+    }
+    return HttpResponse(template.render(context, request))
+
+def graphingCalculator(request):
+    template = loader.get_template("src/calculator/graphing/graphing.html")
+    context = {
+        "categories": menu(),
+    }
+    return HttpResponse(template.render(context, request))
+
+def probabilityCalculator(request):
+    template = loader.get_template("src/calculator/probability/probability.html")
+    context = {
+        "categories": menu(),
+    }
+    return HttpResponse(template.render(context, request))
+
+def aboutCalculator(request):
+    template = loader.get_template("src/calculator/about-calculator/about-calculator.html")
+    context = {
+        "categories": menu(),
+    }
+    return HttpResponse(template.render(context, request))
+"""End, Calculator"""
 
 def login(request):
     template = loader.get_template("src/login/login.html")

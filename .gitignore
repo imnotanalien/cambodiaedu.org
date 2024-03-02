@@ -130,4 +130,5 @@ dmypy.json
 
 # sokden editor
 staticfiles/
+static/
 test/

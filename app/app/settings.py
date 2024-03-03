@@ -25,12 +25,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = str(os.environ.get('SECRET_KEY'))
+SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = str(os.environ.get('DEBUG')) == '1' # 1 == True
+#DEBUG = str(os.environ.get('DEBUG')) == 'True' # False == True => False
+DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
+ALLOWED_HOSTS.extend(
+    filter(
+        None,
+        os.environ.get('ALLOWED_HOSTS', '').split(','),
+    )
+)
 
 
 # Application definition
@@ -51,7 +58,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     "django.middleware.locale.LocaleMiddleware",
     'django.middleware.common.CommonMiddleware',
@@ -149,7 +155,27 @@ STATICFILES_DIRS = [
     BASE_DIR / "frontend/",
 ]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+# AWS S3 storage.
+if bool(int(os.environ.get("IS_ON_AWS", 0))) == bool(True):
+    # Import from s3_backends.py file.
+    DEFAULT_FILE_STORAGE = "app.s3_backends.MediaS3Storage"
+    STATICFILES_STORAGE = "app.s3_backends.StaticS3Storage"
+    
+    AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+    AWS_S3_ACCESS_KEY_ID = os.environ.get("AWS_S3_ACCESS_KEY_ID")
+    AWS_S3_SECRET_ACCESS_KEY = os.environ.get("AWS_S3_SECRET_ACCESS_KEY")
+    AWS_S3_REGION_NAME = "ap-southeast-1"
+    AWS_S3_SIGNATURE_VERSION= "s3v4"
+    AWS_DEFAULT_ACL = "public-read"
+    AWS_QUERYSTRING_AUTH = False
+
+    # Custom domain name
+    AWS_S3_CUSTOM_DOMAIN = "storage.cambodiaedu.org"
+    print("- Successfully connected with Amazon S3.")
+
+else:
+    MEDIA_ROOT = BASE_DIR / "staticfiles/media"
+    print("- Failed to connect with Amazon S3.")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

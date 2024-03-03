@@ -1,5 +1,26 @@
 ## Welcome to the official open source code of cambodiaedu.org!
 
+- Local push code to GitHub.
+```
+git status
+git add . && git commit -am "Update" && git push
+```
+
+- Access the GitHub to clone/pull origin.
+```
+ssh root@137.184.176.166
+
+eval "$(ssh-agent -s)" && ssh-add ~/.ssh/github_id_ed25519 && cd densok && git pull && source venv/bin/activate && cd app && python3 manage.py collectstatic
+
+eval "$(ssh-agent -s)" && ssh-add ~/.ssh/github_id_ed25519 && cd densok && git pull && source venv/bin/activate && cd app && python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py collectstatic
+
+deactivate && cd ~ && sudo systemctl restart gunicorn && sudo nginx -t && sudo systemctl restart nginx
+
+python3 manage.py test
+
+sudo tail -F /var/log/nginx/error.log
+```
+
 - Production deployed in Ubuntu should:
 ```
 cp /var/www/cambodiaedu/.env.sample /var/www/cambodiaedu/.env

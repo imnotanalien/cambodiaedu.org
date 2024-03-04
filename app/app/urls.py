@@ -35,6 +35,7 @@ urlpatterns += i18n_patterns(
     path(_(""), views.home, name="home"),
 
     path(_("blog/"), views.blog, name="blog"),
+    path(_("merch/"), views.merch, name="merch"),
 
     # Calculator
     path(_("calculator/"), views.calculator, name="calculator"),

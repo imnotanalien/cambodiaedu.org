@@ -6,6 +6,7 @@
     min-height: calc(100vh - 60px);
     background-color: var(--navbar-bg-both);
     box-shadow: var(--box-shadow-both);
+    transition: .3s ease-in;
     z-index: 9;
 }
 
@@ -34,4 +35,11 @@
 
 .sidebar-calculator-links svg {
     fill: var(--svg-both-color);
+}
+
+@media (max-width: 800px) {
+    .sidebar-calculator {
+        left: -70px;
+        transition: .3s ease-out;
+    }
 }

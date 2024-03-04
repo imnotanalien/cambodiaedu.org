@@ -91,6 +91,13 @@ def blog(request):
     }
     return HttpResponse(template.render(context, request))
 
+def merch(request):
+    template = loader.get_template("src/merch/merch.html")
+    context = {
+        "categories": menu(),
+    }
+    return HttpResponse(template.render(context, request))
+
 """Calculator"""
 def calculator(request):
     template = loader.get_template("src/calculator/calculator.html")

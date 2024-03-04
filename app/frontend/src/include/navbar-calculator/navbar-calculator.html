@@ -14,7 +14,7 @@
 <nav class="navbar-calculator">
     <a href="{% url "calculator" %}" class="navbar-calculator-logo-a">
         <img class="navbar-calculator-logo" src="{% static "assets/images/icon.png" %}" alt="">
-        <span>Cambo/Calculator</span>
+        <span class="navbar-calculator-name">Calculator</span>
     </a>
     <ul class="navbar-calculator-ul">
         <li>
@@ -30,6 +30,22 @@
             <a class="navbar-calculator-links" href="{% url "probability-calculator" %}">Probability</a>
         </li>
     </ul>
+
+    {% comment %} Dropdown menu {% endcomment %}
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">
+            More
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/>
+            </svg>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+            <a class="navbar-calculator-links" href="{% url "basic-calculator" %}">Basic</a>
+            <a class="navbar-calculator-links" href="{% url "graphing-calculator" %}">Graphing</a>
+            <a class="navbar-calculator-links" href="{% url "geometry-calculator" %}">Geometry</a>
+            <a class="navbar-calculator-links" href="{% url "probability-calculator" %}">Probability</a>
+        </div>
+    </div>
 
     <div style="position: relative; display: flex; align-items: center; right: 1.2rem; margin-left: auto;">
         {% include "src/include/theme-btn/theme-btn.html" %}

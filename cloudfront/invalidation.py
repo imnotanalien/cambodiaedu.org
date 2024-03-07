@@ -6,7 +6,7 @@ import time
 cf = boto3.client("cloudfront")
 
 # This is the CloudFront Distribution ID.
-DISTRIBUTION_ID = ""
+DISTRIBUTION_ID = "EKB1H8KYYF0UP"
 
 # Create CloudFront invalidation.
 def create_invalidation():

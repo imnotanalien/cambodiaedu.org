@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # 'django.contrib.staticfiles', # Replace the default to customizing "collectstatic_ignore.py".
     "django_browser_reload",
     'core',
+    'user',
     'ckeditor',
     'sekizai',
     'app.ignore_collectstatic.MyStaticFilesConfig', # The collectstatic is replaced by this line.
@@ -181,3 +182,6 @@ else:
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Customization user models.
+AUTH_USER_MODEL = "core.User"

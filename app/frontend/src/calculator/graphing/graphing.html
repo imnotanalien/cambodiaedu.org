@@ -17,12 +17,128 @@
 {% block content %}
 {% include "src/include/navbar-calculator/navbar-calculator.html" %}
 {% include "src/include/sidebar-calculator/sidebar-calculator.html" %}
-<div class="geometry-calculator">
-    <span>Graphing Calculator</span>
+{% include "src/include/calculator-keyboard/calculator-keyboard.html" %}
+
+
+<!-- Page layout for calculator -->
+<!-- Equation and instructions -->
+<div class="graphing-calculator">
+    <div style = "float: left; padding-right: 10px;">
+        {% comment %} Equation inputs: {% endcomment %}
+        {% comment %} Input 1 {% endcomment %}
+        <p>
+            Equation 1: 
+            <input class="keyboard-input" id='eq1' type="text" name="inter_fname"/>
+            
+            Colour: 
+            <select id='colour1'>
+                <option value="black" selected>	black 	</option>
+                <option value="red">			red		</option>
+                <option value="blue">			blue	</option>
+                <option value="green">			green	</option>
+            </select> 
+        </p>
+        
+        {% comment %} Input 2 {% endcomment %}
+        <p> 
+            Equation 2: 
+            <input class="keyboard-input" id ="eq2" type="text" name="inter_fname"/>
+            
+            Colour: 
+            <select id='colour2'>
+                <option value="black" selected>	black 	</option>
+                <option value="red">			red		</option>
+                <option value="blue">			blue	</option>
+                <option value="green">			green	</option>
+            </select> 
+        </p>
+        
+        {% comment %} Input 3 {% endcomment %}
+        <p> 
+            Equation 3: 
+            <input class="keyboard-input" id="eq3" type="text" name="inter_fname"/>
+            
+            Colour: 
+            <select id='colour3'>
+                <option value="black" selected>	black 	</option>
+                <option value="red">			red		</option>
+                <option value="blue">			blue	</option>
+                <option value="green">			green	</option>
+            </select> 
+        </p>
+        
+        {% comment %} Submit button {% endcomment %}
+        <button class="submit-btn" id='btnSubmit' >Submit</button>
+        
+        {% comment %} Instructions {% endcomment %}
+        <p>Enter a javascript expression:</p>
+        <p>For example: "2*x + 1" or "x**2 - 1*x - 6" or "x**3 - x - 1".</p>
+    </div>
+    
+    {% comment %} Graph and buttons {% endcomment %}
+    <div style = "float: left;">
+
+        {% comment %} Graph canvas {% endcomment %}
+        <div style = "float: left;">
+            <canvas id = "canvas" width = "500" height = "500" style = "border: 1px solid #000000;" > </canvas>
+        </div>
+        
+        {% comment %} Graph manipulation {% endcomment %}
+        <div style = "float: bottom;" >
+            
+            {% comment %} Axis Offset {% endcomment %}
+            <div style = "float:left" >
+                <p style = "text-align: center"> Axis offset: </P>
+                <div style = "float: bottom;" >
+                    {% comment %} Left button {% endcomment %}
+                    <div style = "float: left" >
+                        <button id = 'offset_left'> < </button>
+                    </div>
+                    
+                    {% comment %} Up/down offset {% endcomment %}
+                    <div style = "float: left" >
+                        <div style = "float: up;">
+                            <button id = 'offset_up'> /\ </button>
+                        </div>
+                        
+                        <button id = 'offset_down'> \/ </button>	
+                    </div>
+                    
+                    {% comment %} Right button {% endcomment %}
+                    <button id = 'offset_right'> > </button>
+                </div>
+            </div>
+            
+            {% comment %} Scale {% endcomment %}
+            {% comment %} X axis: {% endcomment %}
+            <div style = "float: left; padding-left: 20px" > 
+                <p style = "text-align: center"> Scale X </p>
+                <div style = "float:bottom"> 
+                    <button id = 'scale_x_plus'> + </button>
+                    <button id = 'scale_x_minus'> - </button>
+                </div>
+            </div>
+            
+            {% comment %} Y axis: {% endcomment %}
+            <div style = "float: left; padding-left: 20px">
+                <p style = "text-align: center"> Scale Y </p>
+                <div style = "float:bottom"> 
+                    <button id = 'scale_y_plus'> + </button>
+                    <button id = 'scale_y_minus'> - </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+	
+
 {% endblock content %}
-
-
 {% block script %}
     <script src="{% static "src/calculator/graphing/graphing.js" %}"></script>
+    {% comment %} Generate graph via Javascript {% endcomment %}
+    <script src="{% static "src/calculator/graphing/canvas_graph.js" %}"></script>
+    {% comment %} Event listeners {% endcomment %}
+    <script src ="{% static "src/calculator/graphing/user_input.js" %}"></script>
+    {% comment %} Execute functions {% endcomment %}
+    <script src ="{% static "src/calculator/graphing/implement.js" %}"></script>
 {% endblock script %}

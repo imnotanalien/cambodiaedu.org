@@ -1,6 +1,6 @@
 .sidebar-calculator {
     position: fixed;
-    margin-top: 60px;
+    top: 60px;
     left: 0;
     width: 70px;
     min-height: calc(100vh - 60px);

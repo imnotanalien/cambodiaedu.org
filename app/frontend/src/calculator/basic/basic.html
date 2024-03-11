@@ -17,12 +17,13 @@
 {% block content %}
 {% include "src/include/navbar-calculator/navbar-calculator.html" %}
 {% include "src/include/sidebar-calculator/sidebar-calculator.html" %}
+{% include "src/include/calculator-keyboard/calculator-keyboard.html" %}
+
 <div class="basic-calculator">
     <span>Basic Calculator</span>
 </div>
+
 {% endblock content %}
-
-
 {% block script %}
     <script src="{% static "src/calculator/basic/basic.js" %}"></script>
 {% endblock script %}

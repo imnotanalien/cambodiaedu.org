@@ -150,6 +150,10 @@ def signup(request):
     template = loader.get_template("src/signup/signup.html")
     return HttpResponse(template.render({}, request))
 
+def logout(request):
+    template = loader.get_template("src/logout/logout.html")
+    return HttpResponse(template.render({}, request))
+
 def about(request):
     template = loader.get_template("src/about/about.html")
     context = {}

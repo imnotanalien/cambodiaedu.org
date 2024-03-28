@@ -7,3 +7,15 @@
     padding: 1rem;
     z-index: 8;
 }
+
+/* Set margin to the footer */
+.margin-footer {
+    margin-left: 70px;
+}
+
+@media (max-width: 800px) {
+    .margin-footer {
+        margin-left: 0;
+    }
+}
+/* End, Set margin to the footer */

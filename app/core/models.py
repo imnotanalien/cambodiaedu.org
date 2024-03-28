@@ -3,67 +3,76 @@ from ckeditor.fields import RichTextField
 from django.urls import reverse
 from django.utils.text import slugify
 
+from django.utils import timezone
+import string
+import random
+
 from django.contrib.auth.models import (
-    BaseUserManager, AbstractBaseUser
+    AbstractBaseUser,
+    BaseUserManager,
+    PermissionsMixin,
 )
 
 # ===== Customize Django user models. =====
+def random_user_id():
+    return ''.join(random.choice(string.digits) for _ in range(10)) # (string.ascii_letters + string.digits)
+
 class UserManager(BaseUserManager):
+    """Manager for users."""
+
     def create_user(self, email, password=None, **extra_fields):
-        """responsible for both creating and saving a user with the given parameters"""
+        """Create, save and return a new user."""
         if not email:
-            raise ValueError("Cannot create a user without an email address")
-        
+            raise ValueError('User must have an email address.')
         user = self.model(email=self.normalize_email(email), **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
-        return user
 
-    def create_staffuser(self, email, password):
-        """Creates and saves a staff user with the given email and password."""
-        user = self.create_user(
-            email,
-            password=password,
-        )
-        user.staff = True
-        user.save(using=self._db)
         return user
 
     def create_superuser(self, email, password):
-        """Responsible for creating and saving a superuser with the given parameters."""
-        user = self.create_user(
-            email,
-            password=password,
-        )
-        user.staff = True
-        user.admin = True
+        """Create and return a new superuser."""
+        user = self.create_user(email, password)
+        user.is_staff = True
+        user.is_superuser = True
         user.save(using=self._db)
+
         return user
 
-# Hook in the New Manager to our Model.
-class User(AbstractBaseUser):
-    email = models.EmailField(verbose_name="user email address", max_length=100, unique=True,)
-    first_name = models.CharField(max_length=30, default="No First Name")
-    last_name = models.CharField(max_length=30, default="No Last Name")
-    date_of_birth = models.DateField(verbose_name="Birthday", null=True)
+
+class User(AbstractBaseUser, PermissionsMixin):
+    """User in the system."""
+    class Meta:
+        verbose_name_plural = "0 - User"
+
+    email = models.EmailField(max_length=100, unique=True)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    username = models.CharField(max_length=50, unique=True, blank=True, null=True)
+    bio = models.CharField(max_length=255, blank=True, null=True)
+    date_of_birth = models.DateField(blank=True, null=True)
+    profile = models.ImageField(null=False, blank=False, upload_to="user/profile/", default="user/profile/default.png")
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    is_admin = models.BooleanField(default=False) # a superuser
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     objects = UserManager()
 
-    # Notice the absence of a "Password field" that is built-in.
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = [
-        "first_name",
-        "last_name",
-        "date_of_birth",
-    ] # Note: Email & Password are required by default.
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = [] #['date_of_birth']
 
-    def __str__(self):
-        return self.email
+    def save(self, *args, **kwargs):
+        if not self.username:
+            self.username = "user" + "-" + random_user_id()
+
+        super(User, self).save(*args, **kwargs)
+
+    def get_absolute_url(self, *args, **kwargs):
+        kwargs = {
+            "username": self.username,
+        }
+        return reverse("user", kwargs=kwargs)
 # ===== End, Customize Django user models. =====
 
 

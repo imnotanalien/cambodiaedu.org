@@ -1,4 +1,30 @@
 :root {
+    /* Start */
+    --maroon-red: #800000;
+    --light-red: #ff0000;
+    --crimson-red: #e32636;
+    --font-size-menu: 18px;
+    --font-size-search: 16px;
+
+    --primary: #eeeeee;
+    --secondary: #227c70;
+    --green: #82cd47;
+    --secondary-light: rgb(34, 124, 112, 0.2);
+    --secondary-light-2: rgb(127, 183, 126, 0.1);
+    --white: #fff;
+    --black: #393e46;
+    --shadow: 0px 2px 8px 0px var(--secondary-light);
+
+    --z-index-header-1: 2;
+    --z-index-header-nav: 11;
+
+    --z-index-create-post: 1;
+    --z-index-post-overlay: 20;
+    --z-index-post-modal-box: 21;
+
+    --z-index-home-main: 3;
+    /* End densok */
+
     /* ^ this is what I have in the final code at codinginpublic.dev/projects/light-dark/ 
     I missed the change from 96% lightness in the second box-shadow to 26% lightness when doing the video
     */
@@ -50,7 +76,7 @@
     --card-border-size: 1px solid rgba(255, 255, 255, .2);
     --card-border-size-2: 2px solid rgba(255, 255, 255, .3);
 
-    --border-light: 1px solid rgba(255, 255, 255, .5);;
+    --border-light: 1px solid rgba(255, 255, 255, .5);
     --border-dark: 1px solid rgba(0, 0, 0, .5);
 
     --hamburger-light: #fff;
@@ -59,8 +85,12 @@
     --text-shadow-hover-light: 0 0 0 #fff;
     --text-shadow-hover-dark: 0 0 0 #333;
 
-    --box-shadow-light: rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px;
-    --box-shadow-dark: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    --box-shadow-light: 0 2px 4px rgba(255, 255, 255, 0.1), 0 8px 16px rgba(255, 255, 255, 0.1);
+    --box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    /* If light mode border will none. */
+    --border-none-light: 1px solid rgba(255, 255, 255, .2);
+    --border-none-dark: none;
     /* end */
 }
 
@@ -91,6 +121,7 @@
         --text-shadow-hover-both: var(--text-shadow-hover-light);
         --border-both: var(--border-light);
         --box-shadow-both: var(--box-shadow-light);
+        --border-none-both: var(--border-none-light);
         /* end */
     }
 }
@@ -120,6 +151,7 @@
         --text-shadow-hover-both: var(--text-shadow-hover-dark);
         --border-both: var(--border-dark);
         --box-shadow-both: var(--box-shadow-dark);
+        --border-none-both: var(--border-none-dark);
         /* end */
     }
 }
@@ -148,6 +180,7 @@
     --text-shadow-hover-both: var(--text-shadow-hover-light);
     --border-both: var(--border-light);
     --box-shadow-both: var(--box-shadow-light);
+    --border-none-both: var(--border-none-light);
     /* end */
 }
 
@@ -175,6 +208,7 @@
     --text-shadow-hover-both: var(--text-shadow-hover-dark);
     --border-both: var(--border-dark);
     --box-shadow-both: var(--box-shadow-dark);
+    --border-none-both: var(--border-none-dark);
     /* end */
 }
 /* End, In order to write codes below correctly is that we must put the same order as me now "code below". */

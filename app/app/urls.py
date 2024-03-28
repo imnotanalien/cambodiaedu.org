@@ -25,9 +25,25 @@ from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 from django.conf.urls.static import static
 
+"""API schema render on the browser."""
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+)
+
 
 urlpatterns = [
     path(_('admin/'), admin.site.urls),
+
+    # ========== API URLs ==========
+    path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),
+    path(
+        'api/docs/',
+        SpectacularSwaggerView.as_view(url_name='api-schema'),
+        name='api-docs',
+    ),
+    path('api/user/', include('user.urls')),
+
     path("__reload__/", include("django_browser_reload.urls")),
 ]
 
@@ -46,8 +62,10 @@ urlpatterns += i18n_patterns(
     path(_("calculator/about/"), views.aboutCalculator, name="about-calculator"),
     # End, Calculator
 
+    # Log in, sign up and log out.
     path(_("login/"), views.login, name="login"),
     path(_("signup/"), views.signup, name="signup"),
+    path(_("logout/"), views.logout, name="logout"),
 
     path(_("search/"), views.search, name="search"),
 
@@ -56,6 +74,6 @@ urlpatterns += i18n_patterns(
     path(_("donate/"), views.donate, name="donate"),
     path(_("contact/"), views.contact, name="contact"),
 
-    path(_("<slug:category_url>/"), views.lesson, name="lesson"),
-    path(_("<slug:category_url>/<slug:slug_url>/"), views.detail, name="detail"),
+    # path(_("<slug:category_url>/"), views.lesson, name="lesson"),
+    # path(_("<slug:category_url>/<slug:slug_url>/"), views.detail, name="detail"),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

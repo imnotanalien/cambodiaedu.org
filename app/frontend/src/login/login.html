@@ -1,1 +1,77 @@
-<h1>Log in</h1>
+{% extends "src/base/base.html" %}
+{% load static %}
+
+{% block title %}Log in | Den Sok{% endblock %}
+
+{% comment %} Block extra style {% endcomment %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static "src/login/login.css" %}">
+{% endblock style %}
+
+
+{% block meta %}
+    <link rel="canonical" href="https://www.cambodiaedu.org/login/" />
+
+    <meta name="title" content="Log in to CambodiaEdu.org" />
+    <meta name="description" content="Logging in grants access to your existing account, allowing you to quickly and securely use the platform without repetitive form-filling." />
+
+    <meta name="keywords" content="CambodiaEdu.org, Tutorial, How To">
+    <meta name="author" content="Log in to CambodiaEdu.org">
+
+    <meta property="og:site_name" content="Log in to CambodiaEdu.org" />
+    <meta property="og:locale" content="en_US" />
+
+    {% comment %} Open Graph {% endcomment %}
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.cambodiaedu.org/login/" />
+    <meta property="og:title" content="Log in to CambodiaEdu.org" />
+    <meta property="og:description" content="Logging in grants access to your existing account, allowing you to quickly and securely use the platform without repetitive form-filling." />
+    <meta property="og:image" content="{% static "assets/images/log-in-form.jpg" %}" />
+
+    {% comment %} X/Twitter {% endcomment %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@cambodiaedu_" />
+    <meta name="twitter:creator" content="@cambodiaedu_" />
+    <meta name="twitter:url" content="https://www.cambodiaedu.org/login/" />
+    <meta name="twitter:title" content="Log in to CambodiaEdu.org" />
+    <meta name="twitter:description" content="Logging in grants access to your existing account, allowing you to quickly and securely use the platform without repetitive form-filling." />
+    <meta name="twitter:image" content="{% static "assets/images/log-in-form.jpg" %}" />
+{% endblock meta %}
+
+
+{% block content %}
+{% include "src/include/user-is-logged-in/user-is-logged-in.html" %}
+
+{% comment %} Alert cookie message set to NONE/DISABLE. {% endcomment %}
+{% block alert-cookie %}{% endblock alert-cookie %}
+
+<div class="container flex">
+    <div class="facebook-page flex">
+        {% comment %} <div class="text">
+            <h1>Log in now :)</h1>
+            <p>Post your things >= today.</p>
+            <p>Stay post your things with us.</p>
+        </div> {% endcomment %}
+
+        <form action="/api/user/login/" class="form" method="POST" id="loginForm">{% csrf_token %}
+            <input id="email" name="email" type="email" placeholder="Email or phone number" required>
+            <input id="password" name="password" type="password" placeholder="Password" required>
+            <div class="link">
+                <button type="submit" class="login">Log in</button>
+                <a href="#" class="forgot">Forgot password?</a>
+            </div>
+            <hr>
+            <div class="button">
+                <a href="{% url "signup" %}">Don't have an account?</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+{% comment %} Block extra script {% endcomment %}
+{% block script %}
+    <script type="text/javascript" src="{% static "src/login/login.js" %}"></script>
+{% endblock script %}

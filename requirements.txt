@@ -1,4 +1,5 @@
 Django==5.0.1
+djangorestframework==3.15.1
 python-dotenv==1.0.0
 gunicorn==21.2.0
 django-ckeditor==6.7.0
@@ -9,3 +10,11 @@ django-storages==1.14.2
 django-sekizai==4.1.0
 # Automatically reload page.
 django-browser-reload
+# JWT
+PyJWT==2.8.0
+djangorestframework-simplejwt==5.3.1
+# Allow from other request.
+django-cors-headers==4.3.1
+drf-spectacular==0.27.1
+# Pillow is use for ImageField in models field.
+pillow==10.2.0

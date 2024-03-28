@@ -1,0 +1,22 @@
+{% load static %}
+{% load sekizai_tags %}
+
+{% addtoblock "css" %}
+    <link rel="stylesheet" type="text/css" href="{% static "src/include/user-is-logged-in/user-is-logged-in.css" %}">
+{% endaddtoblock %}
+
+
+{% comment %} Show message if user logged in {% endcomment %}
+<div class="smg-user-logged-in-container" id="msgUserLoggedIn">
+    <form action="/api/user/logout/" class="smg-user-logged-in" id="logoutForm">
+        {% csrf_token %}
+        <span class="items">You're already logged in!</span>
+        <a class="items" href="/">Back to Home</a>
+        <button class="items button-24" type="submit">Logout</button>
+    </form>
+</div>
+
+
+{% addtoblock "js" %}
+    <script type="text/javascript" src="{% static "src/include/user-is-logged-in/user-is-logged-in.js" %}"></script>
+{% endaddtoblock %}

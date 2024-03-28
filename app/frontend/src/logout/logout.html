@@ -1,0 +1,29 @@
+{% extends "src/base/base.html" %}
+{% load static %}
+
+{% block title %}Logout | Den Sok{% endblock title %}
+
+{% block robots_tags %}
+    <meta name="robots" content="noindex, nofollow">
+{% endblock robots_tags %}
+
+{% comment %} Block style {% endcomment %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static "src/logout/logout.css" %}">
+{% endblock style %}
+
+
+{% comment %} Block content {% endcomment %}
+{% block content %}
+    <div class="logout-container">
+        <span>You have been logged out!</span>
+        <a class="button-54" href="/">Home</a>
+        <a class="button-54" href="{% url 'login' %}">Log in again?</a>
+    </div>
+{% endblock content %}
+
+
+{% comment %} Block script {% endcomment %}
+{% block script %}
+    <script type="text/javascript" src="{% static "src/logout/logout.js" %}"></script>
+{% endblock script %}

@@ -58,12 +58,13 @@
         <div class="bottom">
             <div>
                 {% comment %} <img id="showOCRImg" src=""> {% endcomment %}
+                <img src="">
 
                 {% comment %} Get photo from captured. {% endcomment %}
-                <canvas id="canvasPhoto"></canvas>
-                <img id="photo" alt="The screen capture will appear in this box.">
+                {% comment %} <canvas id="canvasPhoto"></canvas>
+                <img id="photo" src="" alt="The screen capture will appear in this box."> {% endcomment %}
             </div>
-            <div style="display: none;">
+            <div>
                 <textarea placeholder="text"></textarea>
             </div>
         </div>

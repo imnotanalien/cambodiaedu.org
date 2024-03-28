@@ -5,7 +5,7 @@ const img = document.getElementById('photo');
 const progress = document.querySelector('.progress');
 const textarea = document.querySelector('textarea');
 
-// First show image on upload
+// first show image on upload
 fileSelector.onchange = () => {
     var file = fileSelector.files[0]
     var imgUrl = window.URL.createObjectURL(new Blob([file], { type: 'image/jpg' }))

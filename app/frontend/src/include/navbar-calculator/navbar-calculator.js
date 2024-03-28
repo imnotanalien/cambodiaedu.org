@@ -188,3 +188,21 @@ logoutForm.addEventListener('submit', async (event) => {
     window.localStorage.removeItem('authenticated');
     window.location.href = "/logout";
 });
+
+
+// ================ Dropdown list ================
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function changeLanguageFunc() {
+    document.getElementById("langDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (e) {
+    if (!e.target.matches('.dropbtn')) {
+        var langDropdown = document.getElementById("langDropdown");
+        if (langDropdown.classList.contains('show')) {
+            langDropdown.classList.remove('show');
+        }
+    }
+}

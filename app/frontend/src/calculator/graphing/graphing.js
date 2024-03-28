@@ -1,5 +1,5 @@
 // ============ OCR ============
-const fileSelector = document.querySelector('input');
+const fileSelector = document.getElementById('uploadFile');
 const start = document.getElementById('startOCRBtn');
 const img = document.getElementById('photo');
 const progress = document.querySelector('.progress');

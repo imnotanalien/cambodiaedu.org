@@ -51,20 +51,19 @@
     {% comment %} OCR {% endcomment %}
     <div class="container">
         <div class="upper">
-            <input type="file">
+            <input type="file" id="uploadFile">
             <button id="startOCRBtn" class="button-4" role="button">Start</button>
             <div class="progress"></div>
         </div>
         <div class="bottom">
             <div>
                 {% comment %} <img id="showOCRImg" src=""> {% endcomment %}
-                <img src="">
 
                 {% comment %} Get photo from captured. {% endcomment %}
-                {% comment %} <canvas id="canvasPhoto"></canvas>
-                <img id="photo" src="" alt="The screen capture will appear in this box."> {% endcomment %}
+                <canvas id="canvasPhoto"></canvas>
+                <img id="photo" src="" alt="The screen capture will appear in this box.">
             </div>
-            <div>
+            <div style="display: none;">
                 <textarea placeholder="text"></textarea>
             </div>
         </div>

@@ -71,7 +71,6 @@ a:link {
     margin: 0;
 }
 
-.navbar a:hover,
 .dropdown-menu:hover .dropbtn,
 .dropbtn:focus {
     color: red;
@@ -111,16 +110,26 @@ a:link {
 /* End, Dropdown menu */
 
 
-/* Dropdown list */
+/* Language dropdown list */
 .lang-dropdown {
     overflow: hidden;
+    border: var(--border-both);
+    border-radius: 20px;
+    padding: 2px 4px;
 }
 
-.lang-dropdown svg {
+.lang-dropdown-svg {
+    margin-right: 4px;
+}
+
+.lang-dropdown-svg,
+.lang-dropdown-svg-arrow {
     fill: var(--svg-both-color);
 }
 
 .lang-dropdown .dropbtn {
+    display: flex;
+    align-items: center;
     cursor: pointer;
     font-size: 16px;
     border: none;
@@ -140,7 +149,6 @@ a:link {
     padding: 0 5px 0 0;
 }
 
-.navbar a:hover,
 .lang-dropdown:hover .dropbtn,
 .dropbtn:focus {
     background-color: rgba(155, 155, 155, 0.2);
@@ -175,7 +183,7 @@ a:link {
 .show {
     display: block;
 }
-/* End */
+/* End, Language dropdown list */
 
 
 /* User profile */
@@ -364,6 +372,6 @@ a:link {
 
 @media (max-width: 800px) {
     .navbar-calculator-name {
-        font-size: 16px;
+        display: none;
     }
 }

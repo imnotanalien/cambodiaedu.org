@@ -17,13 +17,23 @@
         <li class="sidebar-calculator-li">
             <a href="{% url "calculator" %}" class="sidebar-calculator-links home">
                 <span id="svgSidebarHome"></span>
-                <span>Home</span>
+                {% if LANGUAGE_CODE == "en" %}
+                    <span>Home</span>
+                {% endif %}
+                {% if LANGUAGE_CODE == "km" %}
+                    <span>ទំព័រដើម</span>
+                {% endif %}
             </a>
         </li>
         <li class="sidebar-calculator-li">
             <a href="{% url "about-calculator" %}" class="sidebar-calculator-links about">
                 <span id="svgSidebarAbout"></span>
-                <span>About</span>
+                {% if LANGUAGE_CODE == "en" %}
+                    <span>About</span>
+                {% endif %}
+                {% if LANGUAGE_CODE == "km" %}
+                    <span>អំពីយើង</span>
+                {% endif %}
             </a>
         </li>
     </ul>

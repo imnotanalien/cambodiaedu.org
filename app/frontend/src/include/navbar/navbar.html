@@ -57,7 +57,7 @@
                 <input type="search" name="q" class="search-data" placeholder="Search" required>
             {% endif %}
             {% if LANGUAGE_CODE == "km" %}
-                <input type="search" name="q" class="search-data" placeholder="ស្វែងរក ទំព័រដើម" required>
+                <input type="search" name="q" class="search-data" placeholder="ស្វែងរក" required>
             {% endif %}
             <button type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" viewBox="0 0 512 512" height="18">
@@ -67,12 +67,12 @@
         </form>
     </div>
 
-    {% comment %} Dropdown list {% endcomment %}
-    <div class="dropdown">
-        <button class="dropbtn" onclick="myFunction()">
-            {% for lang in languages %}
-                {% if LANGUAGE_CODE == lang.code %}
-                    {{ lang.name_local }}
+    {% comment %} Language dropdown list {% endcomment %}
+    <div class="language-dropdown">
+        <button class="dropbtn" onclick="changeLanguage()">
+            {% for language in languages %}
+                {% if LANGUAGE_CODE == language.code %}
+                    {{ language.name_local }}
                 {% endif %}
             {% endfor %}
 
@@ -82,9 +82,9 @@
         </button>
                     
         <ul class="dropdown-content" id="myDropdown">
-            {% for lang in languages %}
+            {% for language in languages %}
                 <li>
-                    <a href="/{{ lang.code }}/">{{ lang.name_local }}</a>
+                    <a href="/{{ language.code }}/{{request.get_full_path|slice:"4:"}}">{{ language.name_local }}</a>
                 </li>
             {% endfor %}
         </ul>

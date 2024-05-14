@@ -6,6 +6,10 @@
     z-index: 100;
 }
 
+.keyboard-symbol svg {
+    fill: var(--svg-both-color);
+}
+
 .input-box {
     display: flex;
     align-items: center;
@@ -98,4 +102,10 @@ textarea {
 
 .keyboard-dark {
     background: rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 890px) {
+    .keyboard-symbol {
+        display: none;
+    }
 }

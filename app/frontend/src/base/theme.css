@@ -55,11 +55,20 @@
     --bg-light: #f0f2f5;
     --bg-dark: hsl(218, 14.7%, 18.7%);
 
+    --bg-light-2: #f0f2f5;
+    --bg-dark-2: #14181D;
+
     --bg-card-light: #fff;
     --bg-card-dark: hsl(218, 14.7%, 18.7%);
 
     --svg-icon-light: #fff;
     --svg-icon-dark: hsl(218, 14.7%, 18.7%);
+
+    /* Social media icons */
+    --svg-social-media-light: rgb(125, 125, 125);
+    --svg-social-media-dark: rgb(180, 180, 180);
+    --svg-social-media-hover-light: rgb(90, 90, 90);
+    --svg-social-media-hover-dark: rgb(250, 250, 250);
 
     --cookie-policy-light: #0000EE;
     --cookie-policy-dark: #fe5b50;
@@ -76,22 +85,48 @@
     --card-border-size: 1px solid rgba(255, 255, 255, .2);
     --card-border-size-2: 2px solid rgba(255, 255, 255, .3);
 
-    --border-light: 1px solid rgba(255, 255, 255, .5);
-    --border-dark: 1px solid rgba(0, 0, 0, .5);
-
     --hamburger-light: #fff;
     --hamburger-dark: #2c3e50;
 
-    --text-shadow-hover-light: 0 0 0 #fff;
-    --text-shadow-hover-dark: 0 0 0 #333;
+    --text-shadow-hover-light: 0 0 .2px #333, 0 0 .2px #333;
+    --text-shadow-hover-dark: 0 0 .6px #fff, 0 0 .6px #fff;
 
     --box-shadow-light: 0 2px 4px rgba(255, 255, 255, 0.1), 0 8px 16px rgba(255, 255, 255, 0.1);
     --box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    --border-light: 1px solid rgba(255, 255, 255, .5);
+    --border-dark: 1px solid rgba(0, 0, 0, .5);
+
+    --border-light-2: 1.5px solid #272727;
+    --border-dark-2: none;
+
+    --border-light-3: 1px solid rgba(255, 255, 255, .2);
+    --border-dark-3: 1px solid rgba(0, 0, 0, .2);
 
     /* If light mode border will none. */
     --border-none-light: 1px solid rgba(255, 255, 255, .2);
     --border-none-dark: none;
     /* end */
+
+
+    /* CSS skeleton keyframes animation */
+    --skeleton-bg-zero-percentage-light: #c2cfd6;
+    --skeleton-bg-hundred-percentage-light: #f0f3f5;
+
+    --skeleton-bg-zero-percentage-dark: #656871;
+    --skeleton-bg-hundred-percentage-dark: #888b94;
+    /* End, CSS skeleton keyframes animation */
+
+    /* Button background highlight on clicked */
+    --btn-bg-hover-highlight-light: rgba(255, 255, 255, 0.16);
+    --btn-bg-hover-highlight-dark: rgba(0, 0, 0, 0.1);
+
+    /* Loader, circle loading more */
+    --loader-circle-light: 3px solid rgb(170, 170, 170);
+    --loader-running-light: 3px solid rgb(120, 120, 120);
+
+    --loader-circle-dark: 3px solid rgb(170, 170, 170);
+    --loader-running-dark: 3px solid rgb(230, 230, 230);
 }
 
 /* In order to write codes below correctly is that we must put the same order as me now "code below". */
@@ -108,21 +143,38 @@
         /* densok */
         --navbar-bg-both: var(--navbar-bg-dark);
         --bg-both: var(--bg-dark);
+        --bg-both-2: var(--bg-dark-2);
         --bg-card-both: var(--bg-card-dark);
         --cookie-policy-both: var(--cookie-policy-light);
         --promote-btn-both: var(--promote-btn-bg-dark);
         --promote-btn-hover-both: var(--promote-btn-hover-dark);
         --legal-border-both: var(--legal-border-dark);
-        
-        /* --svg-both-color: var(--svg-icon-dark); */
-        /* contrast color */
+
+        /* CSS skeleton keyframes animation */
+        --skeleton-bg-zero-percentage: var(--skeleton-bg-zero-percentage-dark);
+        --skeleton-bg-hundred-percentage: var(--skeleton-bg-hundred-percentage-dark);
+
+        /* Loader, circle loading more */
+        --loader-circle-both: var(--loader-circle-dark);
+        --loader-running-both: var(--loader-running-dark);
+
+        --text-shadow-hover-both: var(--text-shadow-hover-dark);
+
+        /* Social media icons */
+        --svg-social-media-both: var(--svg-social-media-dark);
+        --svg-social-media-hover-both: var(--svg-social-media-hover-dark);
+
+        /* ===== contrast color ===== */
         --svg-both-color: var(--svg-icon-light);
         --hamburger-both: var(--hamburger-light);
-        --text-shadow-hover-both: var(--text-shadow-hover-light);
-        --border-both: var(--border-light);
         --box-shadow-both: var(--box-shadow-light);
+        --border-both: var(--border-light);
+        --border-both-2: var(--border-light-2);
+        --border-both-3: var(--border-light-3);
         --border-none-both: var(--border-none-light);
-        /* end */
+
+        /* Button background highlight on clicked */
+        --btn-bg-hover-highlight-both: var(--btn-bg-hover-highlight-light);
     }
 }
 
@@ -139,20 +191,38 @@
         /* densok */
         --navbar-bg-both: var(--navbar-bg-light);
         --bg-both: var(--bg-light);
+        --bg-both-2: var(--bg-light-2);
         --bg-card-both: var(--bg-card-light);
         --svg-both-color: var(--svg-icon-light);
         --promote-btn-both: var(--promote-btn-bg-light);
         --promote-btn-hover-both: var(--promote-btn-hover-light);
         --legal-border-both: var(--legal-border-light);
-        
-        /* contrast color */
+
+        /* CSS skeleton keyframes animation */
+        --skeleton-bg-zero-percentage: var(--skeleton-bg-zero-percentage-light);
+        --skeleton-bg-hundred-percentage: var(--skeleton-bg-hundred-percentage-light);
+
+        /* Loader, circle loading more */
+        --loader-circle-both: var(--loader-circle-light);
+        --loader-running-both: var(--loader-running-light);
+
+        --text-shadow-hover-both: var(--text-shadow-hover-light);
+
+        /* Social media icons */
+        --svg-social-media-both: var(--svg-social-media-light);
+        --svg-social-media-hover-both: var(--svg-social-media-hover-light);
+
+        /* ===== contrast color ===== */
         --svg-both-color: var(--svg-icon-dark);
         --hamburger-both: var(--hamburger-dark);
-        --text-shadow-hover-both: var(--text-shadow-hover-dark);
-        --border-both: var(--border-dark);
         --box-shadow-both: var(--box-shadow-dark);
+        --border-both: var(--border-dark);
+        --border-both-2: var(--border-dark-2);
+        --border-both-3: var(--border-dark-3);
         --border-none-both: var(--border-none-dark);
-        /* end */
+
+        /* Button background highlight on clicked */
+        --btn-bg-hover-highlight-both: var(--btn-bg-hover-highlight-dark);
     }
 }
 
@@ -168,20 +238,38 @@
     /* densok */
     --navbar-bg-both: var(--navbar-bg-dark);
     --bg-both: var(--bg-dark);
+    --bg-both-2: var(--bg-dark-2);
     --bg-card-both: var(--bg-card-dark);
     --cookie-policy-both: var(--cookie-policy-dark);
     --promote-btn-both: var(--promote-btn-bg-dark);
     --promote-btn-hover-both: var(--promote-btn-hover-dark);
     --legal-border-both: var(--legal-border-dark);
-    
-    /* contrast color */
+
+    /* CSS skeleton keyframes animation */
+    --skeleton-bg-zero-percentage: var(--skeleton-bg-zero-percentage-dark);
+    --skeleton-bg-hundred-percentage: var(--skeleton-bg-hundred-percentage-dark);
+
+    /* Loader, circle loading more */
+    --loader-circle-both: var(--loader-circle-dark);
+    --loader-running-both: var(--loader-running-dark);
+
+    --text-shadow-hover-both: var(--text-shadow-hover-dark);
+
+    /* Social media icons */
+    --svg-social-media-both: var(--svg-social-media-dark);
+    --svg-social-media-hover-both: var(--svg-social-media-hover-dark);
+
+    /* ===== contrast color ===== */
     --svg-both-color: var(--svg-icon-light);
     --hamburger-both: var(--hamburger-light);
-    --text-shadow-hover-both: var(--text-shadow-hover-light);
-    --border-both: var(--border-light);
     --box-shadow-both: var(--box-shadow-light);
+    --border-both: var(--border-light);
+    --border-both-2: var(--border-light-2);
+    --border-both-3: var(--border-light-3);
     --border-none-both: var(--border-none-light);
-    /* end */
+
+    /* Button background highlight on clicked */
+    --btn-bg-hover-highlight-both: var(--btn-bg-hover-highlight-light);
 }
 
 [color-scheme="light"] {
@@ -196,19 +284,37 @@
     /* densok */
     --navbar-bg-both: var(--navbar-bg-light);
     --bg-both: var(--bg-light);
+    --bg-both-2: var(--bg-light-2);
     --bg-card-both: var(--bg-card-light);
     --cookie-policy-both: var(--cookie-policy-light);
     --promote-btn-both: var(--promote-btn-bg-light);
     --promote-btn-hover-both: var(--promote-btn-hover-light);
     --legal-border-both: var(--legal-border-light);
+
+    /* CSS skeleton keyframes animation */
+    --skeleton-bg-zero-percentage: var(--skeleton-bg-zero-percentage-light);
+    --skeleton-bg-hundred-percentage: var(--skeleton-bg-hundred-percentage-light);
     
-    /* contrast color */
+    /* Loader, circle loading more */
+    --loader-circle-both: var(--loader-circle-light);
+    --loader-running-both: var(--loader-running-light);
+
+    --text-shadow-hover-both: var(--text-shadow-hover-light);
+
+    /* Social media icons */
+    --svg-social-media-both: var(--svg-social-media-light);
+    --svg-social-media-hover-both: var(--svg-social-media-hover-light);
+
+    /* ===== contrast color ===== */
     --svg-both-color: var(--svg-icon-dark);
     --hamburger-both: var(--hamburger-dark);
-    --text-shadow-hover-both: var(--text-shadow-hover-dark);
-    --border-both: var(--border-dark);
     --box-shadow-both: var(--box-shadow-dark);
+    --border-both: var(--border-dark);
+    --border-both-2: var(--border-dark-2);
+    --border-both-3: var(--border-dark-3);
     --border-none-both: var(--border-none-dark);
-    /* end */
+
+    /* Button background highlight on clicked */
+    --btn-bg-hover-highlight-both: var(--btn-bg-hover-highlight-dark);
 }
 /* End, In order to write codes below correctly is that we must put the same order as me now "code below". */

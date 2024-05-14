@@ -49,6 +49,8 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path(_(""), views.home, name="home"),
+    path(_("khmer/"), views.home, name="khmer"),
+    path(_("python/"), views.home, name="python"),
 
     path(_("blog/"), views.blog, name="blog"),
     path(_("merch/"), views.merch, name="merch"),

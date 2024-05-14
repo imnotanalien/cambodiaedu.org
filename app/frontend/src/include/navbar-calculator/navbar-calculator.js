@@ -16,25 +16,6 @@ navbarCalculatorLinks.forEach(link => {
     }
 });
 
-
-// ========== Dropdown menu ==========
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function (e) {
-    if (!e.target.matches('.dropbtn')) {
-        var myDropdown = document.getElementById("myDropdown");
-        if (myDropdown.classList.contains('show')) {
-            myDropdown.classList.remove('show');
-        }
-    }
-}
-
-
 // ============= Get cookies from client browser =============
 function getCookieJS(cname) {
     let name = cname + "=";
@@ -190,19 +171,34 @@ logoutForm.addEventListener('submit', async (event) => {
 });
 
 
-// ================ Dropdown list ================
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function changeLanguageFunc() {
-    document.getElementById("langDropdown").classList.toggle("show");
+// ========== Dropdown more menu ==========
+var myDropdown = document.getElementById("myDropdown");
+
+function btnDropdownFunc() {
+    myDropdown.classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
+// Close the dropdown if the user clicks outside of it.
 window.onclick = function (e) {
-    if (!e.target.matches('.dropbtn')) {
-        var langDropdown = document.getElementById("langDropdown");
-        if (langDropdown.classList.contains('show')) {
-            langDropdown.classList.remove('show');
+    if (!e.target.matches(".dropbtn")) {
+        if (myDropdown.classList.contains("show")) {
+            myDropdown.classList.remove("show");
+        }
+    }
+}
+
+// ================ Dropdown languages ================
+const langDropdownVar = document.getElementById("langDropdown");
+
+function changeLanguageFunc() {
+    langDropdownVar.classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it.
+window.onclick = function (e) {
+    if (!e.target.matches(".btn-lang-dropdown")) {
+        if (langDropdownVar.classList.contains("show")) {
+            langDropdownVar.classList.remove("show");
         }
     }
 }

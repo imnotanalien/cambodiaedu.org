@@ -1,0 +1,30 @@
+.btn-back-or-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.btn-back-or-close svg {
+    fill: var(--svg-both-color)
+}
+
+.svg-close {
+    stroke: red;
+    stroke-width: 2px;
+}
+
+@media (hover: hover) {
+    .btn-back-or-close:hover {
+        background-color: var(--btn-bg-hover-highlight-both);
+    }
+}

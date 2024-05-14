@@ -63,3 +63,35 @@ body {
 }
 
 /* End, Button */
+
+/* Start message on home page. */
+.message-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-both);
+    z-index: 200;
+}
+
+.message-lists {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 96%;
+    max-width: 500px;
+    gap: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid gray;
+    padding: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.message-lists span {
+    color: var(--text);
+    font-size: 20px;
+}
+/* End, Start message on home page. */

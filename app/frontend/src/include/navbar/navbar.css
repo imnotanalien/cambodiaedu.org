@@ -150,6 +150,11 @@ ul {
     margin: 0;
 }
 
+.language-dropdown .dropbtn svg {
+    fill: var(--svg-both-color);
+    z-index: -1;
+}
+
 .space {
     margin: 10px 0;
 }

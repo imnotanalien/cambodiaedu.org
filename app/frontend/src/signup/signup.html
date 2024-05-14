@@ -9,38 +9,10 @@
 {% endblock style %}
 
 
-{% block meta %}
-    <link rel="canonical" href="https://www.cambodiaedu.org/signup/" />
-
-    <meta name="title" content="Sign up or create an account!" />
-    <meta name="description" content="Once signed up, you can log in quickly without repetitive form-filling." />
-
-    <meta name="keywords" content="CambodiaEdu.org, Tutorial, How To">
-    <meta name="author" content="Sign up or create an account!">
-
-    <meta property="og:site_name" content="Sign up or create an account!" />
-    <meta property="og:locale" content="en_US" />
-
-    {% comment %} Open Graph {% endcomment %}
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://www.cambodiaedu.org/signup/" />
-    <meta property="og:title" content="Sign up or create an account!" />
-    <meta property="og:description" content="Once signed up, you can log in quickly without repetitive form-filling." />
-    <meta property="og:image" content="{% static "assets/images/sign-up-form.jpg" %}" />
-
-    {% comment %} X/Twitter {% endcomment %}
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@cambodiaedu_" />
-    <meta name="twitter:creator" content="@cambodiaedu_" />
-    <meta name="twitter:url" content="https://www.cambodiaedu.org/signup/" />
-    <meta name="twitter:title" content="Sign up or create an account!" />
-    <meta name="twitter:description" content="Once signed up, you can log in quickly without repetitive form-filling." />
-    <meta name="twitter:image" content="{% static "assets/images/sign-up-form.jpg" %}" />
-{% endblock meta %}
-
-
 {% block content %}
 {% include "src/include/user-is-logged-in/user-is-logged-in.html" %}
+{% include "src/include/x-back-or-close/back-or-close.html" %}
+
 
 {% comment %} Alert cookie message set to NONE/DISABLE. {% endcomment %}
 {% block alert-cookie %}{% endblock alert-cookie %}

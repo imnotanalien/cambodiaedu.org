@@ -1,0 +1,19 @@
+{% load static %}
+{% load sekizai_tags %}
+
+{% addtoblock "css" %}
+    <link rel="stylesheet" type="text/css" href="{% static "src/include/x-back-or-close/back-or-close.css" %}">
+{% endaddtoblock %}
+
+
+{% comment %} Back or close {% endcomment %}
+<button class="btn-back-or-close" type="button" role="button" onclick="btnBackOrClose()">
+    <svg class="svg-close" xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 -960 960 960" width="36">
+        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+    </svg>
+</button>
+
+
+{% addtoblock "js" %}
+    <script type="text/javascript" src="{% static "src/include/x-back-or-close/back-or-close.js" %}"></script>
+{% endaddtoblock %}

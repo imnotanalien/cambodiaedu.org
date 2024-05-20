@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="{% static "assets/images/favicon.ico" %}">
+    <link rel="icon" href="{% static "assets/images/favicon.ico" %}">
     <link rel="apple-touch-icon" href="{% static "assets/images/apple-touch-icon.png" %}">
     <title>{% block title %}CambodiaEdu.org | Online Web Tutorials{% endblock %}</title>
 
@@ -43,6 +43,16 @@
         <meta name="twitter:image" content="{% static "assets/images/favicon.ico" %}" />
     {% endblock meta %}
 
+    {% comment %} Improve Google Site Name. {% endcomment %}
+    <script type="application/ld+json">
+        {
+            "@context" : "https://schema.org",
+            "@type" : "WebSite",
+            "name" : "CambodiaEdu.org",
+            "alternateName" : "CamboEdu",
+            "url" : "https://www.cambodiaedu.org/",
+        }
+    </script>
 
     {% comment %} Google Fonts | Battambang {% endcomment %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,19 +70,9 @@
     {% block html_head_tag %}{% endblock html_head_tag %}
 
     {% render_block "css" %}
-
-    {% comment %} Improve Google Site Name. {% endcomment %}
-    <script type="application/ld+json">
-        {
-            "@context" : "https://schema.org",
-            "@type" : "WebSite",
-            "name" : "CambodiaEdu.org",
-            "alternateName" : "CamboEdu",
-            "url" : "https://www.cambodiaedu.org/",
-        }
-    </script>
 </head>
 <body>
+    {% comment %} Light/dark mode. {% endcomment %}
     <script src="{% static "src/base/base.js" %}"></script>
 
     {% comment %} Block content. {% endcomment %}
@@ -81,7 +81,6 @@
     </main>
 
     {% block script %}{% endblock script %}
-
     {% render_block "js" %}
 </body>
 </html>

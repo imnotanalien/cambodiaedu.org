@@ -26,22 +26,22 @@
     {% comment %} Vertical line. {% endcomment %}
     <span class="vertical"></span>
 
-    <div class="nav-items">
+    <ul class="nav-items">
         <li class="header-blog-li"><a href="{% url "blog" %}">Blog</a></li>
 
         {% comment %} Loop menu {% endcomment %}
         {% if LANGUAGE_CODE == "en" %}
-            {% for cate in categories %}
-                <li><a href="/{{ cate.categoryUrl }}">{{ cate.categoryNameEnglish }}</a></li>
-            {% endfor %}
-        {% endif %}
-        {% if LANGUAGE_CODE == "km" %}
-            {% for cate in categories %}
-                <li><a href="/{{ cate.categoryUrl }}">{{ cate.categoryNameKhmer }}</a></li>
-            {% endfor %}
+            <li><a href="/khmer/">Khmer</a></li>
+            <li><a href="/python/">Python</a></li>
+            <li><a href="/math/">Math</a></li>
         {% endif %}
 
-    </div>
+        {% if LANGUAGE_CODE == "km" %}
+            <li><a href="/khmer/">ភាសាខ្មែរ</a></li>
+            <li><a href="/python/">ផាយថុន</a></li>
+            <li><a href="/math/">គណិតវិទ្យា</a></li>
+        {% endif %}
+    </ul>
     
     <div class="search-icon">
         <span class="fas fa-search"></span>
@@ -50,7 +50,7 @@
         <span class="fas fa-times"></span>
     </div>
 
-    {% comment %} Right {% endcomment %}
+    {% comment %} Search field {% endcomment %}
     <div class="search-field">
         <form action="/search" method="GET">
             {% if LANGUAGE_CODE == "en" %}

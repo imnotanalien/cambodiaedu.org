@@ -79,3 +79,6 @@ urlpatterns += i18n_patterns(
     # path(_("<slug:category_url>/"), views.lesson, name="lesson"),
     # path(_("<slug:category_url>/<slug:slug_url>/"), views.detail, name="detail"),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Custom 404 error page not found.
+handler404 = "app.views.custom_page_not_found"

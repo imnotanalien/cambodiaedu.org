@@ -53,11 +53,13 @@ INSTALLED_APPS = [
     "django_browser_reload",
     'core',
     'user',
+    'post',
     'ckeditor',
     'sekizai',
-    'app.ignore_collectstatic.MyStaticFilesConfig', # The collectstatic is replaced by this line.
-    "corsheaders",
+    'customization.customize_collectstatic.MyStaticFilesConfig', # The collectstatic is replaced by this line.
+    'corsheaders',
     'drf_spectacular',
+    'customization',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +80,11 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "frontend"],
+        'DIRS': [
+            BASE_DIR / "frontend",
+            BASE_DIR / "seo",
+            BASE_DIR / "",
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -162,9 +168,9 @@ STATICFILES_DIRS = [
 
 # AWS S3 storage.
 if bool(int(os.environ.get("IS_ON_AWS", 0))) == bool(True):
-    # Import from s3_backends.py file.
-    DEFAULT_FILE_STORAGE = "app.s3_backends.MediaS3Storage"
-    STATICFILES_STORAGE = "app.s3_backends.StaticS3Storage"
+    # Import from customization/s3_backends.py file.
+    DEFAULT_FILE_STORAGE = "customization.s3_backends.MediaS3Storage"
+    STATICFILES_STORAGE = "customization.s3_backends.StaticS3Storage"
     
     AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
     AWS_S3_ACCESS_KEY_ID = os.environ.get("AWS_S3_ACCESS_KEY_ID")

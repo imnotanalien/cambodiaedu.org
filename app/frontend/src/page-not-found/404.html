@@ -1,0 +1,36 @@
+{% extends "src/base/base.html" %}
+{% load static %}
+
+{% block title %}Page Not Found | CambodiaEdu.org{% endblock %}
+
+{% block robots_tags %}
+    <meta name="robots" content="noindex, nofollow">
+{% endblock robots_tags %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static "src/page-not-found/404.css" %}">
+{% endblock style %}
+
+
+{% block content %}
+    <section class="page-not-found-container">
+        <div class="page-not-found-content">
+            <div class="cover-background">
+                <h1 class="page-not-found-content">Page Not Found</h1>
+            </div>
+
+            <div class="contant-box-404">
+                <span><strong>— Oops —<br>The page you requested doesn't exist.</strong></span>
+
+                <div>
+                    <a style="text-decoration: none;" href="/" class="link_404">Go to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+
+{% block script %}
+    <script type="text/javascript" src="{% static "src/page-not-found/404.js" %}"></script>
+{% endblock script %}

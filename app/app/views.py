@@ -13,9 +13,14 @@ from core.models import (
 from django.db.models import Q
 
 
+# Customize 404 page not found (relationship with app/urls.py).
+def custom_page_not_found(request, exception):
+    return render(request, "src/page-not-found/404.html", status=404)
+
 def menu():
     site_categories = BlogPostCategory.objects.all()
     return site_categories
+
 
 def home(request, **kwargs):
     template = loader.get_template("src/home/home.html")
@@ -35,7 +40,7 @@ def home(request, **kwargs):
 
 def lesson(request, category_url=None):
     template = loader.get_template("src/lesson/lesson.html")
-    page_not_found = loader.get_template("src/404-error/404-error.html")
+    page_not_found = loader.get_template("src/page-not-found/page-not-found.html")
 
     try:
         data = BlogPost.objects.get(category__categoryUrl=category_url)

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /token.json/
+
+Sitemap: https://www.cambodiaedu.org/sitemap.xml

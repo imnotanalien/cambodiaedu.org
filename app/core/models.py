@@ -15,7 +15,8 @@ from django.contrib.auth.models import (
 
 # ===== Customize Django user models. =====
 def random_user_id():
-    return ''.join(random.choice(string.digits) for _ in range(10)) # (string.ascii_letters + string.digits)
+    return "".join(random.choice(string.digits) for _ in range(4)) # (string.ascii_letters + string.digits)
+
 
 class UserManager(BaseUserManager):
     """Manager for users."""
@@ -64,7 +65,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def save(self, *args, **kwargs):
         if not self.username:
-            self.username = "user" + "-" + random_user_id()
+            self.username = "user" + random_user_id()
 
         super(User, self).save(*args, **kwargs)
 

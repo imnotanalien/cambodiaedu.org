@@ -1,20 +1,4 @@
-Django==5.0.1
-djangorestframework==3.15.1
-python-dotenv==1.0.0
-gunicorn==21.2.0
-django-ckeditor==6.7.0
-# Integrated AWS S3
-boto3==1.34.54
-django-storages==1.14.2
-# Render CSS or JavaScript at the top or bottom.
-django-sekizai==4.1.0
-# Automatically reload page.
-django-browser-reload
-# JWT
-PyJWT==2.8.0
-djangorestframework-simplejwt==5.3.1
-# Allow from other request.
-django-cors-headers==4.3.1
-drf-spectacular==0.27.1
-# Pillow is use for ImageField in models field.
-pillow==10.2.0
+fastapi==0.111.0
+pydantic==2.7.1
+starlette==0.37.2
+uvicorn==0.29.0

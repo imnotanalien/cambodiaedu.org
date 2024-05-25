@@ -1,9 +1,0 @@
-.geometry-calculator {
-    position: relative;
-    top: 60px;
-    left: 70px;
-    width: calc(100% - 70px);
-    height: calc(100vh - 60px);
-    padding: 1rem;
-    z-index: 8;
-}

@@ -1,5 +1,14 @@
 ## Welcome to the official open source code of cambodiaedu.org!
 
+- How to clone the project specific branches.
+```
+$ git clone --branch <branchname> <remote-repo-url>
+
+or
+
+$ git clone -b <branchname> <remote-repo-url>
+```
+
 - Local push code to GitHub.
 ```
 git status

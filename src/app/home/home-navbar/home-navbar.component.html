@@ -1,0 +1,63 @@
+<nav class="header-navbar">
+    <div class="menu-icon">
+        <span class="fas fa-bars"></span>
+    </div>
+    <div class="logo" id="logo-name">
+        <a href="/" class="header-logo">
+            <img src="assets/images/icon.png" alt="" width="45">
+            <span>CambodiaEdu.org</span>
+        </a>
+    </div>
+
+    <!-- Vertical line. -->
+    <span class="vertical"></span>
+
+    <ul class="nav-items">
+        <li class="header-blog-li"><a href="/blog">Blog</a></li>
+
+        <!-- Loop menu -->
+        <li><a href="/khmer/">Khmer</a></li>
+        <li><a href="/python/">Python</a></li>
+        <li><a href="/math/">Math</a></li>
+
+        <!-- <li><a href="/khmer/">ភាសាខ្មែរ</a></li>
+        <li><a href="/python/">ផាយថុន</a></li>
+        <li><a href="/math/">គណិតវិទ្យា</a></li> -->
+    </ul>
+    
+    <div class="search-icon">
+        <span class="fas fa-search"></span>
+    </div>
+    <div class="cancel-icon">
+        <span class="fas fa-times"></span>
+    </div>
+
+    <!-- Search field -->
+    <div class="search-field">
+        <form action="/search" method="GET">
+            <input type="search" name="q" class="search-data" placeholder="Search" required>
+            <!-- <input type="search" name="q" class="search-data" placeholder="ស្វែងរក" required> -->
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" viewBox="0 0 512 512" height="18">
+                    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <!-- Language dropdown list -->
+    <div class="language-dropdown">
+        <button class="dropbtn" onclick="changeLanguage()" type="submit">
+            English
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 320 512">
+                <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/>
+            </svg>
+        </button>
+                    
+        <ul class="dropdown-content" id="myDropdown">
+            <li>
+                <a href="#language">English</a>
+            </li>
+        </ul>
+    </div>
+</nav>

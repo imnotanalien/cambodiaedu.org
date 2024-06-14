@@ -1,0 +1,36 @@
+<nav class="navbar-calculator">
+    <a href="/calculator" class="navbar-calculator-logo-a">
+        <img class="navbar-calculator-logo" src="assets/images/icon.png" alt="">
+        <span class="navbar-calculator-name">Calculator</span>
+    </a>
+    <ul class="navbar-calculator-ul">
+        <li><a class="navbar-calculator-links" href="/calculator/basic">Basic</a></li>
+        <li><a class="navbar-calculator-links" href="/calculator/graphing">Graphing</a></li>
+    </ul>
+
+    <!-- Dropdown menu -->
+    <div class="dropdown-menu">
+        <button class="dropbtn" onclick="btnDropdownFunc()" aria-label="More menu button">
+            More
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/>
+            </svg>
+        </button>
+        
+        <ul class="dropdown-content" id="myDropdown">
+            <li class="dropdown-menu-items">
+                <a class="navbar-calculator-links" href="/calculator/basic">Basic</a>
+            </li>
+            <li class="dropdown-menu-items">
+                <a class="navbar-calculator-links" href="/calculator/graphing">Graphing</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Right menu - Btn theme light/dark AND languages AND profile. -->
+    <div class="nav-right-menu">
+        <!-- {% include "src/include/btn-profile/btn-profile.html" %}
+        {% include "src/include/btn-theme/btn-theme.html" %}
+        {% include "src/include/btn-language/btn-language.html" %} -->
+    </div>
+</nav>
